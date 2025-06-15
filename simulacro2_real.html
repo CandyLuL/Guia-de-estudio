@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simulacro ECOEMS – Guía Oficial</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .pregunta { margin-bottom: 20px; }
+    .resultado { font-weight: bold; margin-top: 20px; font-size: 1.2em; }
+    .boton-final { margin-top: 30px; }
+  </style>
+</head>
+<body>
+  <h1>🧪 Simulacro ECOEMS – Basado en la Guía Oficial</h1>
+  <form id="form-simulacro2">
+<div class="pregunta"><p><strong>Pregunta 1:</strong> ¿Qué figura completa correctamente la serie?</p>
+<label><input type="radio" name="p1" value="a"> A) Figura A</label><br>
+<label><input type="radio" name="p1" value="b"> B) Figura B</label><br>
+<label><input type="radio" name="p1" value="c"> C) Figura C</label><br>
+<label><input type="radio" name="p1" value="d"> D) Figura D</label><br>
+</div>
+<div class="pregunta"><p><strong>Pregunta 2:</strong> ¿Cuál de las siguientes palabras es antónimo de 'alegría'?</p>
+<label><input type="radio" name="p2" value="a"> A) Felicidad</label><br>
+<label><input type="radio" name="p2" value="b"> B) Tristeza</label><br>
+<label><input type="radio" name="p2" value="c"> C) Risa</label><br>
+<label><input type="radio" name="p2" value="d"> D) Amor</label><br>
+</div>
+<div class="pregunta"><p><strong>Pregunta 3:</strong> ¿Qué número continúa la serie: 2, 4, 8, 16, ...?</p>
+<label><input type="radio" name="p3" value="a"> A) 18</label><br>
+<label><input type="radio" name="p3" value="b"> B) 24</label><br>
+<label><input type="radio" name="p3" value="c"> C) 32</label><br>
+<label><input type="radio" name="p3" value="d"> D) 64</label><br>
+</div>
+<div class="pregunta"><p><strong>Pregunta 4:</strong> ¿Qué palabra no pertenece al grupo?</p>
+<label><input type="radio" name="p4" value="a"> A) Manzana</label><br>
+<label><input type="radio" name="p4" value="b"> B) Plátano</label><br>
+<label><input type="radio" name="p4" value="c"> C) Zanahoria</label><br>
+<label><input type="radio" name="p4" value="d"> D) Pera</label><br>
+</div>
+<div class="pregunta"><p><strong>Pregunta 5:</strong> ¿Cuál es la capital de Francia?</p>
+<label><input type="radio" name="p5" value="a"> A) Berlín</label><br>
+<label><input type="radio" name="p5" value="b"> B) Madrid</label><br>
+<label><input type="radio" name="p5" value="c"> C) París</label><br>
+<label><input type="radio" name="p5" value="d"> D) Roma</label><br>
+</div>
+<div class="pregunta"><p><strong>Pregunta 6:</strong> ¿Cuánto es 15% de 200?</p>
+<label><input type="radio" name="p6" value="a"> A) 25</label><br>
+<label><input type="radio" name="p6" value="b"> B) 30</label><br>
+<label><input type="radio" name="p6" value="c"> C) 35</label><br>
+<label><input type="radio" name="p6" value="d"> D) 40</label><br>
+</div>
+<div class="pregunta"><p><strong>Pregunta 7:</strong> ¿Qué órgano bombea sangre al cuerpo?</p>
+<label><input type="radio" name="p7" value="a"> A) Hígado</label><br>
+<label><input type="radio" name="p7" value="b"> B) Pulmón</label><br>
+<label><input type="radio" name="p7" value="c"> C) Corazón</label><br>
+<label><input type="radio" name="p7" value="d"> D) Estómago</label><br>
+</div>
+<div class="pregunta"><p><strong>Pregunta 8:</strong> ¿Quién escribió 'El Quijote'?</p>
+<label><input type="radio" name="p8" value="a"> A) Gabriel García Márquez</label><br>
+<label><input type="radio" name="p8" value="b"> B) Miguel de Cervantes</label><br>
+<label><input type="radio" name="p8" value="c"> C) Pablo Neruda</label><br>
+<label><input type="radio" name="p8" value="d"> D) Federico García Lorca</label><br>
+</div>
+<div class="pregunta"><p><strong>Pregunta 9:</strong> ¿Cuál es el resultado de 3² + 4²?</p>
+<label><input type="radio" name="p9" value="a"> A) 25</label><br>
+<label><input type="radio" name="p9" value="b"> B) 20</label><br>
+<label><input type="radio" name="p9" value="c"> C) 12</label><br>
+<label><input type="radio" name="p9" value="d"> D) 5</label><br>
+</div>
+<div class="pregunta"><p><strong>Pregunta 10:</strong> ¿Qué gas es esencial para la respiración humana?</p>
+<label><input type="radio" name="p10" value="a"> A) Hidrógeno</label><br>
+<label><input type="radio" name="p10" value="b"> B) Dióxido de carbono</label><br>
+<label><input type="radio" name="p10" value="c"> C) Oxígeno</label><br>
+<label><input type="radio" name="p10" value="d"> D) Nitrógeno</label><br>
+</div>
+
+    <div class="boton-final">
+      <button type="button" onclick="calcularAciertos()">✅ Calcular aciertos</button>
+      <button type="button" onclick="reiniciarExamen()">🔄 Reiniciar examen</button>
+    </div>
+    <div id="resultado" class="resultado"></div>
+  </form>
+
+  <script>
+    const respuestasCorrectas = {
+"p1": "c",
+"p2": "b",
+"p3": "c",
+"p4": "c",
+"p5": "c",
+"p6": "b",
+"p7": "c",
+"p8": "b",
+"p9": "a",
+"p10": "c",
+
+    };
+
+    function calcularAciertos() {
+      let aciertos = 0;
+      for (const [pregunta, correcta] of Object.entries(respuestasCorrectas)) {
+        const seleccionada = document.querySelector(`input[name="${pregunta}"]:checked`);
+        if (seleccionada && seleccionada.value === correcta) {
+          aciertos++;
+        }
+      }
+      document.getElementById("resultado").innerText = `✅ Obtuviste ${aciertos} aciertos de ${Object.keys(respuestasCorrectas).length}.`;
+    }
+
+    function reiniciarExamen() {
+      document.getElementById("form-simulacro2").reset();
+      document.getElementById("resultado").innerText = "";
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
