@@ -1,189 +1,1221 @@
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Simulacro ECOEMS 2025</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .pregunta { margin-bottom: 20px; }
+    .resultado { font-weight: bold; margin-top: 20px; font-size: 1.2em; }
+    .boton-final { margin-top: 30px; }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Simulacro General - ECOEMS 2025</h1>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="espanol.html">Español</a>
-      <a href="matematicas.html">Matemáticas</a>
-      <a href="ciencias.html">Ciencias</a>
-      <a href="sociales.html">Sociales</a>
-    </nav>
-  </header>
+  <h1>🧪 Simulacro ECOEMS 2025</h1>
+  <p>Selecciona una respuesta por cada pregunta. Al final del examen, haz clic en "Calcular aciertos".</p>
 
-  <main>
-    <section>
-      <h2>📝 Instrucciones</h2>
-      <p>Contesta las siguientes <strong>130 preguntas</strong> sin ayuda, como si fuera el examen real. Marca la opción correcta (A, B, C o D) en una hoja aparte o digital. No olvides medir tu tiempo ⏱️ (tiempo recomendado: 3 minutos por bloque de 10 preguntas).</p>
-    </section>
+  <form id="form-simulacro">
 
-    <section>
-      <h2>📘 Español y Comprensión Lectora (25 preguntas)</h2>
-      <ol>
-        <li>¿Cuál es el sinónimo de “rápido”?<br>A) Lento B) Ágil C) Tardío D) Pesado</li>
-        <li>¿Qué figura literaria consiste en comparar dos cosas usando "como"?<br>A) Metáfora B) Símil C) Hipérbole D) Ironía</li>
-        <li>¿Qué tipo de texto tiene como objetivo convencer?<br>A) Descriptivo B) Expositivo C) Argumentativo D) Narrativo</li>
-        <li>¿Qué es una oración simple?<br>A) Tiene dos verbos B) Tiene un solo verbo C) Tiene muchos adjetivos D) Tiene sujeto omitido</li>
-        <li>¿Cuál palabra está escrita correctamente?<br>A) Tubo B) Hico C) Vuscar D) Rrojo</li>
-        <li>Identifica el sujeto en la oración: "Los perros ladraban fuerte."<br>A) Fuerte B) Ladraban C) Los D) Los perros</li>
-        <li>¿Qué signo se usa para hacer una pregunta?<br>A) ! B) ¿ C) . D) ,</li>
-        <li>¿Qué palabra es antónimo de “alegre”?<br>A) Feliz B) Divertido C) Triste D) Contento</li>
-        <li>¿Qué tipo de texto es un instructivo?<br>A) Narrativo B) Descriptivo C) Argumentativo D) Expositivo</li>
-        <li>¿Qué palabra es un adverbio?<br>A) Rápido B) Bonita C) Alto D) Azul</li>
-        <li>¿Qué tipo de palabra es “corriendo”?<br>A) Verbo B) Adjetivo C) Sustantivo D) Adverbio</li>
-        <li>En un debate, ¿qué función cumple el moderador?<br>A) Atacar B) Hablar primero C) Organizar D) Callar</li>
-        <li>¿Cuál es el significado de la palabra “benevolente”?<br>A) Malicioso B) Bondadoso C) Violento D) Impaciente</li>
-        <li>¿Qué significa inferir?<br>A) Copiar B) Dibujar C) Deduzco a partir de pistas D) Exponer hechos</li>
-        <li>¿Cuál es la idea principal de un texto?<br>A) El título B) Lo que más se repite C) El mensaje central D) El autor</li>
-        <li>¿Cuál es un propósito de la lectura?<br>A) Escribir B) Comprender y reflexionar C) Escuchar D) Ver televisión</li>
-        <li>Un cartel busca principalmente:<br>A) Informar o persuadir B) Hacer reír C) Cantar D) Reñir</li>
-        <li>¿Qué indica un punto y coma (;)?<br>A) Fin de texto B) Pausa menor C) Unión de ideas D) Exclamación</li>
-        <li>¿Qué palabra es un sustantivo abstracto?<br>A) Mesa B) Felicidad C) Auto D) Sol</li>
-        <li>¿Qué función tiene el verbo en una oración?<br>A) Describe al sujeto B) Indica acción o estado C) Nombra algo D) Une palabras</li>
-        <li>¿Qué elemento no puede faltar en una narración?<br>A) Un lugar B) Una canción C) Un narrador D) Una fórmula</li>
-        <li>¿Qué es un sinónimo?<br>A) Palabra con significado contrario B) Palabra con igual significado C) Palabra inventada D) Palabra extranjera</li>
-        <li>¿Qué texto busca explicar un tema?<br>A) Descriptivo B) Expositivo C) Argumentativo D) Lírico</li>
-        <li>“Era tan alto como una torre” es un ejemplo de:<br>A) Símil B) Metáfora C) Hipérbole D) Ironía</li>
-        <li>¿Qué es una ficha bibliográfica?<br>A) Una receta B) Un resumen C) Datos de un libro consultado D) Una opinión</li>
-      </ol>
-    </section>
+    <div class="pregunta">
+      <p><strong>Pregunta 1:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p1" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p1" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p1" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p1" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 2:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p2" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p2" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p2" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p2" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 3:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p3" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p3" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p3" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p3" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 4:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p4" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p4" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p4" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p4" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 5:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p5" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p5" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p5" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p5" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 6:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p6" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p6" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p6" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p6" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 7:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p7" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p7" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p7" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p7" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 8:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p8" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p8" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p8" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p8" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 9:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p9" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p9" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p9" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p9" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 10:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p10" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p10" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p10" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p10" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 11:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p11" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p11" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p11" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p11" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 12:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p12" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p12" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p12" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p12" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 13:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p13" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p13" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p13" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p13" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 14:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p14" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p14" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p14" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p14" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 15:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p15" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p15" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p15" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p15" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 16:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p16" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p16" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p16" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p16" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 17:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p17" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p17" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p17" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p17" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 18:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p18" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p18" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p18" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p18" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 19:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p19" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p19" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p19" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p19" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 20:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p20" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p20" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p20" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p20" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 21:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p21" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p21" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p21" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p21" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 22:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p22" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p22" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p22" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p22" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 23:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p23" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p23" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p23" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p23" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 24:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p24" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p24" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p24" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p24" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 25:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p25" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p25" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p25" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p25" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 26:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p26" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p26" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p26" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p26" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 27:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p27" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p27" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p27" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p27" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 28:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p28" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p28" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p28" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p28" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 29:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p29" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p29" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p29" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p29" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 30:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p30" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p30" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p30" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p30" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 31:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p31" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p31" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p31" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p31" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 32:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p32" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p32" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p32" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p32" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 33:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p33" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p33" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p33" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p33" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 34:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p34" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p34" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p34" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p34" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 35:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p35" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p35" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p35" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p35" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 36:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p36" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p36" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p36" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p36" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 37:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p37" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p37" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p37" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p37" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 38:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p38" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p38" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p38" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p38" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 39:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p39" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p39" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p39" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p39" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 40:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p40" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p40" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p40" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p40" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 41:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p41" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p41" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p41" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p41" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 42:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p42" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p42" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p42" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p42" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 43:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p43" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p43" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p43" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p43" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 44:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p44" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p44" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p44" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p44" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 45:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p45" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p45" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p45" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p45" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 46:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p46" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p46" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p46" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p46" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 47:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p47" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p47" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p47" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p47" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 48:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p48" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p48" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p48" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p48" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 49:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p49" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p49" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p49" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p49" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 50:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p50" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p50" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p50" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p50" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 51:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p51" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p51" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p51" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p51" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 52:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p52" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p52" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p52" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p52" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 53:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p53" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p53" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p53" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p53" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 54:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p54" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p54" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p54" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p54" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 55:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p55" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p55" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p55" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p55" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 56:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p56" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p56" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p56" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p56" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 57:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p57" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p57" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p57" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p57" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 58:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p58" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p58" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p58" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p58" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 59:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p59" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p59" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p59" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p59" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 60:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p60" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p60" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p60" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p60" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 61:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p61" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p61" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p61" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p61" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 62:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p62" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p62" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p62" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p62" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 63:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p63" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p63" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p63" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p63" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 64:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p64" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p64" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p64" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p64" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 65:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p65" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p65" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p65" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p65" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 66:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p66" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p66" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p66" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p66" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 67:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p67" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p67" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p67" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p67" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 68:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p68" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p68" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p68" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p68" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 69:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p69" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p69" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p69" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p69" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 70:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p70" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p70" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p70" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p70" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 71:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p71" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p71" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p71" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p71" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 72:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p72" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p72" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p72" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p72" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 73:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p73" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p73" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p73" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p73" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 74:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p74" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p74" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p74" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p74" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 75:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p75" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p75" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p75" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p75" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 76:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p76" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p76" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p76" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p76" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 77:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p77" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p77" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p77" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p77" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 78:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p78" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p78" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p78" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p78" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 79:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p79" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p79" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p79" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p79" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 80:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p80" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p80" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p80" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p80" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 81:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p81" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p81" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p81" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p81" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 82:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p82" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p82" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p82" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p82" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 83:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p83" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p83" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p83" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p83" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 84:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p84" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p84" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p84" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p84" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 85:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p85" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p85" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p85" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p85" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 86:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p86" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p86" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p86" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p86" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 87:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p87" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p87" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p87" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p87" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 88:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p88" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p88" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p88" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p88" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 89:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p89" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p89" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p89" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p89" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 90:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p90" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p90" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p90" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p90" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 91:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p91" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p91" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p91" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p91" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 92:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p92" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p92" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p92" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p92" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 93:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p93" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p93" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p93" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p93" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 94:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p94" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p94" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p94" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p94" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 95:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p95" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p95" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p95" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p95" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 96:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p96" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p96" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p96" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p96" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 97:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p97" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p97" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p97" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p97" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 98:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p98" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p98" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p98" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p98" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 99:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p99" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p99" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p99" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p99" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 100:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p100" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p100" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p100" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p100" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 101:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p101" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p101" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p101" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p101" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 102:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p102" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p102" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p102" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p102" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 103:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p103" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p103" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p103" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p103" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 104:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p104" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p104" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p104" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p104" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 105:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p105" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p105" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p105" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p105" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 106:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p106" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p106" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p106" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p106" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 107:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p107" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p107" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p107" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p107" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 108:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p108" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p108" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p108" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p108" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 109:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p109" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p109" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p109" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p109" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 110:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p110" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p110" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p110" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p110" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 111:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p111" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p111" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p111" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p111" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 112:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p112" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p112" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p112" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p112" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 113:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p113" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p113" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p113" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p113" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 114:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p114" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p114" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p114" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p114" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 115:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p115" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p115" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p115" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p115" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 116:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p116" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p116" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p116" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p116" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 117:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p117" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p117" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p117" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p117" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 118:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p118" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p118" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p118" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p118" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 119:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p119" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p119" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p119" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p119" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 120:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p120" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p120" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p120" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p120" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 121:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p121" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p121" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p121" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p121" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 122:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p122" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p122" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p122" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p122" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 123:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p123" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p123" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p123" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p123" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 124:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p124" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p124" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p124" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p124" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 125:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p125" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p125" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p125" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p125" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 126:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p126" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p126" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p126" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p126" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 127:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p127" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p127" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p127" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p127" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 128:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p128" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p128" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p128" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p128" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 129:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p129" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p129" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p129" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p129" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="pregunta">
+      <p><strong>Pregunta 130:</strong> ¿Cuál es la respuesta correcta?</p>
+      <label><input type="radio" name="p130" value="a" /> A) Opción A</label><br />
+      <label><input type="radio" name="p130" value="b" /> B) Opción B</label><br />
+      <label><input type="radio" name="p130" value="c" /> C) Opción C</label><br />
+      <label><input type="radio" name="p130" value="d" /> D) Opción D</label>
+    </div>
+    
+    <div class="boton-final">
+      <button type="button" onclick="calcularAciertos()">✅ Calcular aciertos</button>
+      <button type="button" onclick="reiniciarExamen()">🔄 Reiniciar examen</button>
+    </div>
+    <div id="resultado" class="resultado"></div>
+  </form>
 
-    <section>
-      <h2>🧮 Matemáticas (25 preguntas)</h2>
-      <ol start="26">
-        <li>¿Cuál es el resultado de 6 × 7?<br>A) 36 B) 42 C) 48 D) 56</li>
-        <li>Si x + 5 = 12, entonces x =<br>A) 5 B) 6 C) 7 D) 8</li>
-        <li>¿Cuánto es 1/2 + 3/4?<br>A) 1 B) 5/4 C) 3/2 D) 1/4</li>
-        <li>Un rectángulo mide 8 cm por 3 cm. ¿Cuál es su área?<br>A) 24 B) 11 C) 16 D) 48</li>
-        <li>¿Qué número sigue?: 2, 4, 8, 16, ___<br>A) 20 B) 24 C) 30 D) 32</li>
-        <li>Si 5x = 25, entonces x =<br>A) 3 B) 4 C) 5 D) 6</li>
-        <li>¿Cuál es el número impar?: 14, 22, 35, 48<br>A) 14 B) 22 C) 35 D) 48</li>
-        <li>¿Qué representa la letra "x" en álgebra?<br>A) Una suma B) Un número desconocido C) Una constante D) Una figura</li>
-        <li>El perímetro de un cuadrado con 4 cm de lado es:<br>A) 12 B) 8 C) 16 D) 20</li>
-        <li>¿Cuánto es 25% de 200?<br>A) 25 B) 50 C) 100 D) 75</li>
-        <li>¿Qué número falta? 3, 6, ___, 12<br>A) 7 B) 8 C) 9 D) 10</li>
-        <li>¿Cuánto es 4²?<br>A) 8 B) 12 C) 16 D) 20</li>
-        <li>¿Cuál es el doble del triple de 3?<br>A) 12 B) 18 C) 6 D) 9</li>
-        <li>¿Qué número tiene raíz cuadrada exacta?<br>A) 15 B) 16 C) 17 D) 18</li>
-        <li>¿Qué representa una probabilidad de 0.5?<br>A) Imposible B) Muy probable C) 50% de probabilidad D) Casi seguro</li>
-        <li>¿Qué figura tiene todos sus lados iguales?<br>A) Rectángulo B) Círculo C) Triángulo equilátero D) Trapecio</li>
-        <li>¿Qué número sigue? 100, 90, 80, ___<br>A) 75 B) 70 C) 60 D) 85</li>
-        <li>¿Cuántos grados tiene un ángulo recto?<br>A) 45° B) 60° C) 90° D) 180°</li>
-        <li>Resuelve: (4 + 2) × 3<br>A) 12 B) 14 C) 18 D) 20</li>
-        <li>¿Cuál es el valor de π aproximado?<br>A) 2.14 B) 3.14 C) 4.14 D) 5.14</li>
-        <li>Si una caja tiene 3 bolas rojas y 2 verdes, ¿probabilidad de sacar roja?<br>A) 1/2 B) 3/5 C) 2/3 D) 4/5</li>
-        <li>¿Cuánto es 0.75 en fracción?<br>A) 3/4 B) 1/2 C) 1/4 D) 2/3</li>
-        <li>¿Cuántos lados tiene un hexágono?<br>A) 4 B) 5 C) 6 D) 7</li>
-        <li>¿Qué palabra no encaja?: cuadrado, rectángulo, triángulo, pelota<br>A) Cuadrado B) Rectángulo C) Triángulo D) Pelota</li>
-        <li>¿Cuál es el número primo?: 4, 6, 7, 8<br>A) 4 B) 6 C) 7 D) 8</li>
-      </ol>
-    </section>
+  <script>
+    const respuestasCorrectas = {
+"p1": "d",
+"p2": "a",
+"p3": "a",
+"p4": "b",
+"p5": "c",
+"p6": "a",
+"p7": "c",
+"p8": "a",
+"p9": "c",
+"p10": "c",
+"p11": "d",
+"p12": "d",
+"p13": "b",
+"p14": "b",
+"p15": "b",
+"p16": "b",
+"p17": "c",
+"p18": "b",
+"p19": "d",
+"p20": "b",
+"p21": "d",
+"p22": "c",
+"p23": "b",
+"p24": "d",
+"p25": "d",
+"p26": "a",
+"p27": "b",
+"p28": "a",
+"p29": "a",
+"p30": "d",
+"p31": "d",
+"p32": "d",
+"p33": "b",
+"p34": "d",
+"p35": "a",
+"p36": "a",
+"p37": "c",
+"p38": "b",
+"p39": "b",
+"p40": "c",
+"p41": "b",
+"p42": "b",
+"p43": "d",
+"p44": "c",
+"p45": "c",
+"p46": "c",
+"p47": "b",
+"p48": "d",
+"p49": "c",
+"p50": "b",
+"p51": "b",
+"p52": "a",
+"p53": "b",
+"p54": "b",
+"p55": "c",
+"p56": "a",
+"p57": "b",
+"p58": "c",
+"p59": "b",
+"p60": "c",
+"p61": "b",
+"p62": "d",
+"p63": "d",
+"p64": "a",
+"p65": "c",
+"p66": "b",
+"p67": "a",
+"p68": "a",
+"p69": "d",
+"p70": "d",
+"p71": "b",
+"p72": "c",
+"p73": "d",
+"p74": "b",
+"p75": "c",
+"p76": "b",
+"p77": "b",
+"p78": "a",
+"p79": "a",
+"p80": "c",
+"p81": "c",
+"p82": "b",
+"p83": "a",
+"p84": "b",
+"p85": "c",
+"p86": "d",
+"p87": "c",
+"p88": "c",
+"p89": "c",
+"p90": "d",
+"p91": "b",
+"p92": "c",
+"p93": "b",
+"p94": "d",
+"p95": "b",
+"p96": "b",
+"p97": "b",
+"p98": "c",
+"p99": "a",
+"p100": "c",
+"p101": "d",
+"p102": "a",
+"p103": "c",
+"p104": "a",
+"p105": "d",
+"p106": "a",
+"p107": "b",
+"p108": "b",
+"p109": "a",
+"p110": "d",
+"p111": "a",
+"p112": "c",
+"p113": "a",
+"p114": "a",
+"p115": "b",
+"p116": "c",
+"p117": "a",
+"p118": "a",
+"p119": "c",
+"p120": "c",
+"p121": "d",
+"p122": "b",
+"p123": "a",
+"p124": "c",
+"p125": "b",
+"p126": "d",
+"p127": "b",
+"p128": "c",
+"p129": "a",
+"p130": "b"
+    };
 
-  <section>
-  <h2>🔬 Ciencias (Física, Química, Biología) – 30 preguntas</h2>
-  <ol start="51">
-    <li>¿Cuál es la unidad principal de medida de la masa en el sistema internacional?<br>A) Metro B) Litro C) Gramo D) Kilogramo</li>
-    <li>¿Qué forma tiene la órbita de la Tierra?<br>A) Circular B) Ovalada C) Elíptica D) Recta</li>
-    <li>¿Cuál es la función principal del sistema digestivo?<br>A) Respirar B) Pensar C) Reproducir D) Transformar alimentos</li>
-    <li>¿Qué órgano bombea la sangre?<br>A) Pulmón B) Corazón C) Riñón D) Estómago</li>
-    <li>¿Cuál es el estado físico del agua a 100°C?<br>A) Sólido B) Líquido C) Gaseoso D) Plasma</li>
-    <li>¿Qué es una célula?<br>A) Una bacteria B) La unidad básica de los seres vivos C) Un virus D) Un órgano</li>
-    <li>¿Qué planeta es conocido como el “planeta rojo”?<br>A) Tierra B) Júpiter C) Marte D) Saturno</li>
-    <li>¿Qué tipo de cambio es derretir hielo?<br>A) Químico B) Físico C) Biológico D) Nuclear</li>
-    <li>¿Qué parte de la planta realiza la fotosíntesis?<br>A) Raíz B) Tallo C) Hoja D) Flor</li>
-    <li>¿Cuál es el símbolo químico del oxígeno?<br>A) Ox B) H2 C) O D) O2</li>
-    <li>¿Qué es una mezcla homogénea?<br>A) No se distinguen sus componentes B) Está separada por fases C) Solo tiene un elemento D) Tiene colores distintos</li>
-    <li>¿Qué aparato se usa para medir la temperatura?<br>A) Barómetro B) Termómetro C) Balanza D) Regla</li>
-    <li>¿Qué gas es esencial para la respiración?<br>A) Hidrógeno B) Oxígeno C) Nitrógeno D) Helio</li>
-    <li>¿Qué tipo de energía se produce al mover un imán cerca de un alambre?<br>A) Sonora B) Eléctrica C) Lumínica D) Térmica</li>
-    <li>¿Qué parte del cuerpo filtra la sangre?<br>A) Hígado B) Estómago C) Riñones D) Corazón</li>
-    <li>¿Qué enfermedad ataca el sistema inmunológico?<br>A) Resfriado B) Gripe C) VIH/SIDA D) Diabetes</li>
-    <li>¿Qué es una solución en química?<br>A) Un soluto disuelto en un solvente B) Una sustancia pura C) Un gas D) Un cambio físico</li>
-    <li>¿Qué planeta tiene anillos visibles?<br>A) Marte B) Saturno C) Venus D) Tierra</li>
-    <li>¿Cuál es la fórmula del agua?<br>A) O2 B) H2O C) CO2 D) HO2</li>
-    <li>¿Qué animal es ovíparo?<br>A) Perro B) Gato C) Águila D) Vaca</li>
-    <li>¿Qué caracteriza a los seres vivos?<br>A) Vuelan B) Se alimentan y se reproducen C) Brillan D) Son invisibles</li>
-    <li>¿Qué es una reacción química?<br>A) Un movimiento B) Cambio de estado C) Formación de nuevas sustancias D) Disolución</li>
-    <li>¿Qué fuerza nos mantiene en el suelo?<br>A) Magnetismo B) Gravedad C) Inercia D) Fricción</li>
-    <li>¿Qué instrumento sirve para observar células?<br>A) Lupa B) Telescopio C) Microscopio D) Cámara</li>
-    <li>¿Cuál de estas sustancias es un ácido?<br>A) Vinagre B) Sal C) Aceite D) Azúcar</li>
-    <li>¿Qué función tiene el sistema respiratorio?<br>A) Proteger B) Respirar oxígeno y eliminar CO2 C) Filtrar sangre D) Transportar nutrientes</li>
-    <li>¿Qué tipo de energía usa una bombilla?<br>A) Mecánica B) Química C) Eléctrica D) Sonora</li>
-    <li>¿Qué tipo de célula no tiene núcleo definido?<br>A) Animal B) Vegetal C) Procariota D) Eucariota</li>
-    <li>¿Qué cambio ocurre al quemar papel?<br>A) Físico B) Químico C) De estado D) Mecánico</li>
-    <li>¿Qué es la biodiversidad?<br>A) Variedad de climas B) Diversidad de vida C) Número de volcanes D) Tipos de suelo</li>
-  </ol>
-</section>
+    function calcularAciertos() {
+      let aciertos = 0;
+      for (const [pregunta, correcta] of Object.entries(respuestasCorrectas)) {
+        const seleccionada = document.querySelector(`input[name="${pregunta}"]:checked`);
+        if (seleccionada && seleccionada.value === correcta) {
+          aciertos++;
+        }
+      }
+      document.getElementById("resultado").innerText = `✅ Obtuviste ${aciertos} aciertos de 130.`;
+    }
 
-<section>
-  <h2>🧭 Geografía (15 preguntas)</h2>
-  <ol start="81">
-    <li>¿Qué instrumento se usa para ubicarse en un mapa?<br>A) Regla B) Compás C) Brújula D) Termómetro</li>
-    <li>¿Cuál es el continente más grande?<br>A) África B) Asia C) América D) Europa</li>
-    <li>¿Qué tipo de mapa muestra el relieve?<br>A) Político B) Económico C) Físico D) Urbano</li>
-    <li>¿Qué fenómeno natural es causado por el movimiento de placas tectónicas?<br>A) Tormenta B) Huracán C) Sismo D) Lluvia</li>
-    <li>¿Qué recurso natural es no renovable?<br>A) Agua B) Sol C) Petróleo D) Viento</li>
-    <li>¿Qué país tiene mayor población mundial?<br>A) India B) China C) México D) Rusia</li>
-    <li>¿Qué océano se encuentra al oeste de América?<br>A) Atlántico B) Pacífico C) Índico D) Ártico</li>
-    <li>¿Qué región de México tiene clima seco?<br>A) Sureste B) Noroeste C) Centro D) Golfo</li>
-    <li>¿Qué actividad económica se relaciona con el campo?<br>A) Industrial B) Comercial C) Agrícola D) Turística</li>
-    <li>¿Qué tipo de migración es de campo a ciudad?<br>A) Internacional B) Temporal C) Interna D) Externa</li>
-    <li>¿Cuál es la capital de México?<br>A) Guadalajara B) Monterrey C) CDMX D) Puebla</li>
-    <li>¿Qué zona de México tiene más sismos?<br>A) Norte B) Centro C) Sureste D) Occidente</li>
-    <li>¿Qué es la globalización?<br>A) Aislamiento de países B) Interconexión mundial C) Cultura local D) Desempleo rural</li>
-    <li>¿Qué mide la escala de un mapa?<br>A) Temperatura B) Altitud C) Distancias reales D) Población</li>
-    <li>¿Qué capa de la Tierra contiene a los seres vivos?<br>A) Núcleo B) Manto C) Corteza D) Hidrosfera</li>
-  </ol>
-</section>
-
-<section>
-  <h2>🏛 Historia (15 preguntas)</h2>
-  <ol start="96">
-    <li>¿En qué año comenzó la Independencia de México?<br>A) 1821 B) 1810 C) 1910 D) 1857</li>
-    <li>¿Quién fue el principal líder del movimiento de Independencia?<br>A) Morelos B) Hidalgo C) Juárez D) Iturbide</li>
-    <li>¿Qué cultura construyó Chichén Itzá?<br>A) Olmeca B) Maya C) Mexica D) Zapoteca</li>
-    <li>¿Qué acontecimiento inició la Revolución Mexicana?<br>A) Plan de Ayala B) Plan de San Luis C) Grito de Dolores D) Constitución</li>
-    <li>¿Quién fue Benito Juárez?<br>A) Dictador B) Presidente liberal y reformista C) Rey de México D) Caudillo militar</li>
-    <li>¿Qué fue el Porfiriato?<br>A) Periodo democrático B) Época colonial C) Dictadura modernizadora D) Guerra civil</li>
-    <li>¿Qué hecho histórico ocurrió en 1968 en México?<br>A) Expropiación petrolera B) Movimiento estudiantil C) Independencia D) Reforma educativa</li>
-    <li>¿Qué país colonizó México?<br>A) Inglaterra B) España C) Francia D) Estados Unidos</li>
-    <li>¿Qué documento se promulgó en 1917?<br>A) Plan de Ayutla B) Constitución mexicana C) Tratado de Versalles D) Carta Magna</li>
-    <li>¿Qué conflicto mundial inició en 1939?<br>A) Primera Guerra B) Segunda Guerra Mundial C) Guerra Fría D) Independencia de México</li>
-    <li>¿Qué personaje lideró la independencia de Sudamérica?<br>A) Bolívar B) Hidalgo C) Zapata D) Madero</li>
-    <li>¿Qué país lanzó bombas atómicas en 1945?<br>A) Japón B) Alemania C) Estados Unidos D) Rusia</li>
-    <li>¿Qué significó la Revolución Francesa para América Latina?<br>A) Cambio climático B) Inspiración de independencia C) Colonización D) Derrota militar</li>
-    <li>¿Qué fue la Guerra Fría?<br>A) Guerra militar directa B) Conflicto ideológico entre EE.UU. y URSS C) Guerra civil europea D) Revolución mexicana</li>
-    <li>¿Qué símbolo representa la independencia de México?<br>A) La campana de Dolores B) El himno nacional C) El escudo D) El águila</li>
-  </ol>
-</section>
-
-<section>
-  <h2>⚖️ Formación Cívica y Ética (10 preguntas)</h2>
-  <ol start="111">
-    <li>¿Qué son los derechos humanos?<br>A) Reglas B) Deberes C) Libertades inherentes a todos D) Costumbres</li>
-    <li>¿Qué valor promueve la paz?<br>A) Violencia B) Respeto C) Corrupción D) Egoísmo</li>
-    <li>¿Qué poder de gobierno hace las leyes?<br>A) Ejecutivo B) Judicial C) Legislativo D) Federal</li>
-    <li>¿Qué organismo organiza las elecciones?<br>A) INE B) SEP C) CNDH D) SAT</li>
-    <li>¿Qué significa democracia?<br>A) Gobierno de uno B) Gobierno del pueblo C) Dictadura D) Iglesia</li>
-    <li>¿Qué institución protege los derechos en México?<br>A) CNDH B) INE C) SEP D) SHCP</li>
-    <li>¿Qué es equidad?<br>A) Dar lo mismo a todos B) Dar lo justo según necesidad C) Evitar justicia D) Ignorar diferencias</li>
-    <li>¿Qué valor se refleja en cumplir leyes?<br>A) Honestidad B) Libertad C) Legalidad D) Respeto</li>
-    <li>¿Qué poder representa al presidente?<br>A) Ejecutivo B) Legislativo C) Judicial D) Municipal</li>
-    <li>¿Qué derecho protege opinar libremente?<br>A) Libertad de culto B) Libertad de expresión C) Derecho a la vida D) Derecho a votar</li>
-  </ol>
-</section>
-
-  </main>
-
-  <footer>
-    <p>Simulacro ECOEMS 2025 – 130 preguntas tipo examen</p>
-  </footer>
+    function reiniciarExamen() {
+      document.getElementById("form-simulacro").reset();
+      document.getElementById("resultado").innerText = "";
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
