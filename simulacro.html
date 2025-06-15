@@ -2,209 +2,163 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simulacro ECOEMS 2025</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Cuestionario Opción Múltiple</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    li { margin-bottom: 15px; }
-    label { display: block; margin-left: 20px; }
+    body {
+      background: #f5f6fa;
+      font-family: Arial, sans-serif;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 850px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 32px 18px 32px 32px;
+      border-radius: 14px;
+      box-shadow: 0 4px 20px #0001;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 18px;
+      color: #1976d2;
+    }
+    .question {
+      margin-bottom: 16px;
+      padding: 16px;
+      border-bottom: 1px solid #e0e0e0;
+      border-radius: 10px;
+    }
+    .q-title {
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+    .options label {
+      display: block;
+      margin-bottom: 5px;
+      cursor: pointer;
+      padding-left: 6px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .options input[type="radio"] {
+      margin-right: 7px;
+      accent-color: #1976d2;
+    }
+    .correct {
+      background: #a5d6a7 !important;
+    }
+    .incorrect {
+      background: #ef9a9a !important;
+    }
+    .show-answer {
+      background: #fff8e1;
+      font-weight: bold;
+    }
+    .btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin: 22px 0 10px;
+      flex-wrap: wrap;
+    }
+    button {
+      background: #1976d2;
+      color: #fff;
+      border: none;
+      border-radius: 7px;
+      padding: 12px 24px;
+      font-size: 17px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px #0002;
+      transition: background 0.22s;
+    }
+    button:hover {
+      background: #135cb2;
+    }
+    .score {
+      text-align: center;
+      font-size: 22px;
+      margin-bottom: 16px;
+      font-weight: bold;
+      color: #2e7d32;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 6vw 2vw 8vw 3vw;
+      }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Simulacro General - ECOEMS 2025</h1>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="espanol.html">Español</a>
-      <a href="matematicas.html">Matemáticas</a>
-      <a href="ciencias.html">Ciencias</a>
-      <a href="sociales.html">Sociales</a>
-    </nav>
-  </header>
+  <div class="container">
+    <h1>Cuestionario de Opción Múltiple</h1>
+    <div id="quiz"></div>
+    <div class="btns">
+      <button onclick="checkAnswers()">Revisar Aciertos</button>
+      <button onclick="resetQuiz()">Reiniciar</button>
+      <button onclick="showAnswers()">Mostrar Respuestas Correctas</button>
+    </div>
+    <div class="score" id="score"></div>
+  </div>
 
-  <main>
-    <section>
-      <h2>Instrucciones</h2>
-      <p>Contesta las siguientes <strong>130 preguntas</strong> seleccionando la opción correcta. Al finalizar, da clic en el botón para calcular tus aciertos.</p>
-    </section>
-
-    <section>
-      <h2>Simulacro</h2>
-      <ol id="lista-preguntas"></ol>
-      <button onclick="verificarRespuestas()">Verificar respuestas</button>
-      <p id="resultado"></p>
-    </section>
-  </main>
-
-  <footer>
-    <p>Simulacro ECOEMS 2025 - Interactivo</p>
-  </footer>
-
-  <script>
-    const preguntas = [
-  { text: "¿Cuál es el sinónimo de 'rápido'?", opciones: ['Lento', 'Ágil', 'Tardío', 'Pesado'], correcta: "B" },
-  { text: "¿Qué número sigue en la serie: 2, 4, 6, 8...?", opciones: ['10', '12', '14', '16'], correcta: "A" },
-  { text: "¿Cuál es el resultado de 5 x 6?", opciones: ['11', '30', '20', '36'], correcta: "B" },
-  { text: "La capital de México es:", opciones: ['Monterrey', 'Puebla', 'CDMX', 'Guadalajara'], correcta: "C" },
-  { text: "¿Qué planeta es conocido como el Planeta Rojo?", opciones: ['Venus', 'Marte', 'Júpiter', 'Saturno'], correcta: "B" },
-  { text: "¿Quién fue el iniciador de la Independencia de México?", opciones: ['Morelos', 'Juárez', 'Hidalgo', 'Zapata'], correcta: "C" },
-  { text: "El resultado de 12 ÷ 4 es:", opciones: ['3', '4', '2', '6'], correcta: "A" },
-  { text: "El agua hierve a:", opciones: ['0°C', '50°C', '100°C', '200°C'], correcta: "C" },
-  { text: "La fotosíntesis ocurre en:", opciones: ['La raíz', 'La flor', 'La hoja', 'El tallo'], correcta: "C" },
-  { text: "El valor de pi es aproximadamente:", opciones: ['3.12', '3.14', '3.16', '3.18'], correcta: "B" },
-  { text: "¿Cuál es el sinónimo de 'rápido'?", opciones: ['Lento', 'Ágil', 'Tardío', 'Pesado'], correcta: "B" },
-  { text: "¿Qué número sigue en la serie: 2, 4, 6, 8...?", opciones: ['10', '12', '14', '16'], correcta: "A" },
-  { text: "¿Cuál es el resultado de 5 x 6?", opciones: ['11', '30', '20', '36'], correcta: "B" },
-  { text: "La capital de México es:", opciones: ['Monterrey', 'Puebla', 'CDMX', 'Guadalajara'], correcta: "C" },
-  { text: "¿Qué planeta es conocido como el Planeta Rojo?", opciones: ['Venus', 'Marte', 'Júpiter', 'Saturno'], correcta: "B" },
-  { text: "¿Quién fue el iniciador de la Independencia de México?", opciones: ['Morelos', 'Juárez', 'Hidalgo', 'Zapata'], correcta: "C" },
-  { text: "El resultado de 12 ÷ 4 es:", opciones: ['3', '4', '2', '6'], correcta: "A" },
-  { text: "El agua hierve a:", opciones: ['0°C', '50°C', '100°C', '200°C'], correcta: "C" },
-  { text: "La fotosíntesis ocurre en:", opciones: ['La raíz', 'La flor', 'La hoja', 'El tallo'], correcta: "C" },
-  { text: "El valor de pi es aproximadamente:", opciones: ['3.12', '3.14', '3.16', '3.18'], correcta: "B" },
-  { text: "¿Cuál es el sinónimo de 'rápido'?", opciones: ['Lento', 'Ágil', 'Tardío', 'Pesado'], correcta: "B" },
-  { text: "¿Qué número sigue en la serie: 2, 4, 6, 8...?", opciones: ['10', '12', '14', '16'], correcta: "A" },
-  { text: "¿Cuál es el resultado de 5 x 6?", opciones: ['11', '30', '20', '36'], correcta: "B" },
-  { text: "La capital de México es:", opciones: ['Monterrey', 'Puebla', 'CDMX', 'Guadalajara'], correcta: "C" },
-  { text: "¿Qué planeta es conocido como el Planeta Rojo?", opciones: ['Venus', 'Marte', 'Júpiter', 'Saturno'], correcta: "B" },
-  { text: "¿Quién fue el iniciador de la Independencia de México?", opciones: ['Morelos', 'Juárez', 'Hidalgo', 'Zapata'], correcta: "C" },
-  { text: "El resultado de 12 ÷ 4 es:", opciones: ['3', '4', '2', '6'], correcta: "A" },
-  { text: "El agua hierve a:", opciones: ['0°C', '50°C', '100°C', '200°C'], correcta: "C" },
-  { text: "La fotosíntesis ocurre en:", opciones: ['La raíz', 'La flor', 'La hoja', 'El tallo'], correcta: "C" },
-  { text: "El valor de pi es aproximadamente:", opciones: ['3.12', '3.14', '3.16', '3.18'], correcta: "B" },
-  { text: "¿Cuál es el sinónimo de 'rápido'?", opciones: ['Lento', 'Ágil', 'Tardío', 'Pesado'], correcta: "B" },
-  { text: "¿Qué número sigue en la serie: 2, 4, 6, 8...?", opciones: ['10', '12', '14', '16'], correcta: "A" },
-  { text: "¿Cuál es el resultado de 5 x 6?", opciones: ['11', '30', '20', '36'], correcta: "B" },
-  { text: "La capital de México es:", opciones: ['Monterrey', 'Puebla', 'CDMX', 'Guadalajara'], correcta: "C" },
-  { text: "¿Qué planeta es conocido como el Planeta Rojo?", opciones: ['Venus', 'Marte', 'Júpiter', 'Saturno'], correcta: "B" },
-  { text: "¿Quién fue el iniciador de la Independencia de México?", opciones: ['Morelos', 'Juárez', 'Hidalgo', 'Zapata'], correcta: "C" },
-  { text: "El resultado de 12 ÷ 4 es:", opciones: ['3', '4', '2', '6'], correcta: "A" },
-  { text: "El agua hierve a:", opciones: ['0°C', '50°C', '100°C', '200°C'], correcta: "C" },
-  { text: "La fotosíntesis ocurre en:", opciones: ['La raíz', 'La flor', 'La hoja', 'El tallo'], correcta: "C" },
-  { text: "El valor de pi es aproximadamente:", opciones: ['3.12', '3.14', '3.16', '3.18'], correcta: "B" },
-  { text: "¿Cuál es el sinónimo de 'rápido'?", opciones: ['Lento', 'Ágil', 'Tardío', 'Pesado'], correcta: "B" },
-  { text: "¿Qué número sigue en la serie: 2, 4, 6, 8...?", opciones: ['10', '12', '14', '16'], correcta: "A" },
-  { text: "¿Cuál es el resultado de 5 x 6?", opciones: ['11', '30', '20', '36'], correcta: "B" },
-  { text: "La capital de México es:", opciones: ['Monterrey', 'Puebla', 'CDMX', 'Guadalajara'], correcta: "C" },
-  { text: "¿Qué planeta es conocido como el Planeta Rojo?", opciones: ['Venus', 'Marte', 'Júpiter', 'Saturno'], correcta: "B" },
-  { text: "¿Quién fue el iniciador de la Independencia de México?", opciones: ['Morelos', 'Juárez', 'Hidalgo', 'Zapata'], correcta: "C" },
-  { text: "El resultado de 12 ÷ 4 es:", opciones: ['3', '4', '2', '6'], correcta: "A" },
-  { text: "El agua hierve a:", opciones: ['0°C', '50°C', '100°C', '200°C'], correcta: "C" },
-  { text: "La fotosíntesis ocurre en:", opciones: ['La raíz', 'La flor', 'La hoja', 'El tallo'], correcta: "C" },
-  { text: "El valor de pi es aproximadamente:", opciones: ['3.12', '3.14', '3.16', '3.18'], correcta: "B" },
-  { text: "¿Cuál es el sinónimo de 'rápido'?", opciones: ['Lento', 'Ágil', 'Tardío', 'Pesado'], correcta: "B" },
-  { text: "¿Qué número sigue en la serie: 2, 4, 6, 8...?", opciones: ['10', '12', '14', '16'], correcta: "A" },
-  { text: "¿Cuál es el resultado de 5 x 6?", opciones: ['11', '30', '20', '36'], correcta: "B" },
-  { text: "La capital de México es:", opciones: ['Monterrey', 'Puebla', 'CDMX', 'Guadalajara'], correcta: "C" },
-  { text: "¿Qué planeta es conocido como el Planeta Rojo?", opciones: ['Venus', 'Marte', 'Júpiter', 'Saturno'], correcta: "B" },
-  { text: "¿Quién fue el iniciador de la Independencia de México?", opciones: ['Morelos', 'Juárez', 'Hidalgo', 'Zapata'], correcta: "C" },
-  { text: "El resultado de 12 ÷ 4 es:", opciones: ['3', '4', '2', '6'], correcta: "A" },
-  { text: "El agua hierve a:", opciones: ['0°C', '50°C', '100°C', '200°C'], correcta: "C" },
-  { text: "La fotosíntesis ocurre en:", opciones: ['La raíz', 'La flor', 'La hoja', 'El tallo'], correcta: "C" },
-  { text: "El valor de pi es aproximadamente:", opciones: ['3.12', '3.14', '3.16', '3.18'], correcta: "B" },
-  { text: "¿Cuál es el sinónimo de 'rápido'?", opciones: ['Lento', 'Ágil', 'Tardío', 'Pesado'], correcta: "B" },
-  { text: "¿Qué número sigue en la serie: 2, 4, 6, 8...?", opciones: ['10', '12', '14', '16'], correcta: "A" },
-  { text: "¿Cuál es el resultado de 5 x 6?", opciones: ['11', '30', '20', '36'], correcta: "B" },
-  { text: "La capital de México es:", opciones: ['Monterrey', 'Puebla', 'CDMX', 'Guadalajara'], correcta: "C" },
-  { text: "¿Qué planeta es conocido como el Planeta Rojo?", opciones: ['Venus', 'Marte', 'Júpiter', 'Saturno'], correcta: "B" },
-  { text: "¿Quién fue el iniciador de la Independencia de México?", opciones: ['Morelos', 'Juárez', 'Hidalgo', 'Zapata'], correcta: "C" },
-  { text: "El resultado de 12 ÷ 4 es:", opciones: ['3', '4', '2', '6'], correcta: "A" },
-  { text: "El agua hierve a:", opciones: ['0°C', '50°C', '100°C', '200°C'], correcta: "C" },
-  { text: "La fotosíntesis ocurre en:", opciones: ['La raíz', 'La flor', 'La hoja', 'El tallo'], correcta: "C" },
-  { text: "El valor de pi es aproximadamente:", opciones: ['3.12', '3.14', '3.16', '3.18'], correcta: "B" },
-  { text: "¿Cuál es el sinónimo de 'rápido'?", opciones: ['Lento', 'Ágil', 'Tardío', 'Pesado'], correcta: "B" },
-  { text: "¿Qué número sigue en la serie: 2, 4, 6, 8...?", opciones: ['10', '12', '14', '16'], correcta: "A" },
-  { text: "¿Cuál es el resultado de 5 x 6?", opciones: ['11', '30', '20', '36'], correcta: "B" },
-  { text: "La capital de México es:", opciones: ['Monterrey', 'Puebla', 'CDMX', 'Guadalajara'], correcta: "C" },
-  { text: "¿Qué planeta es conocido como el Planeta Rojo?", opciones: ['Venus', 'Marte', 'Júpiter', 'Saturno'], correcta: "B" },
-  { text: "¿Quién fue el iniciador de la Independencia de México?", opciones: ['Morelos', 'Juárez', 'Hidalgo', 'Zapata'], correcta: "C" },
-  { text: "El resultado de 12 ÷ 4 es:", opciones: ['3', '4', '2', '6'], correcta: "A" },
-  { text: "El agua hierve a:", opciones: ['0°C', '50°C', '100°C', '200°C'], correcta: "C" },
-  { text: "La fotosíntesis ocurre en:", opciones: ['La raíz', 'La flor', 'La hoja', 'El tallo'], correcta: "C" },
-  { text: "El valor de pi es aproximadamente:", opciones: ['3.12', '3.14', '3.16', '3.18'], correcta: "B" },
-  { text: "¿Cuál es el sinónimo de 'rápido'?", opciones: ['Lento', 'Ágil', 'Tardío', 'Pesado'], correcta: "B" },
-  { text: "¿Qué número sigue en la serie: 2, 4, 6, 8...?", opciones: ['10', '12', '14', '16'], correcta: "A" },
-  { text: "¿Cuál es el resultado de 5 x 6?", opciones: ['11', '30', '20', '36'], correcta: "B" },
-  { text: "La capital de México es:", opciones: ['Monterrey', 'Puebla', 'CDMX', 'Guadalajara'], correcta: "C" },
-  { text: "¿Qué planeta es conocido como el Planeta Rojo?", opciones: ['Venus', 'Marte', 'Júpiter', 'Saturno'], correcta: "B" },
-  { text: "¿Quién fue el iniciador de la Independencia de México?", opciones: ['Morelos', 'Juárez', 'Hidalgo', 'Zapata'], correcta: "C" },
-  { text: "El resultado de 12 ÷ 4 es:", opciones: ['3', '4', '2', '6'], correcta: "A" },
-  { text: "El agua hierve a:", opciones: ['0°C', '50°C', '100°C', '200°C'], correcta: "C" },
-  { text: "La fotosíntesis ocurre en:", opciones: ['La raíz', 'La flor', 'La hoja', 'El tallo'], correcta: "C" },
-  { text: "El valor de pi es aproximadamente:", opciones: ['3.12', '3.14', '3.16', '3.18'], correcta: "B" },
-  { text: "¿Cuál es el sinónimo de 'rápido'?", opciones: ['Lento', 'Ágil', 'Tardío', 'Pesado'], correcta: "B" },
-  { text: "¿Qué número sigue en la serie: 2, 4, 6, 8...?", opciones: ['10', '12', '14', '16'], correcta: "A" },
-  { text: "¿Cuál es el resultado de 5 x 6?", opciones: ['11', '30', '20', '36'], correcta: "B" },
-  { text: "La capital de México es:", opciones: ['Monterrey', 'Puebla', 'CDMX', 'Guadalajara'], correcta: "C" },
-  { text: "¿Qué planeta es conocido como el Planeta Rojo?", opciones: ['Venus', 'Marte', 'Júpiter', 'Saturno'], correcta: "B" },
-  { text: "¿Quién fue el iniciador de la Independencia de México?", opciones: ['Morelos', 'Juárez', 'Hidalgo', 'Zapata'], correcta: "C" },
-  { text: "El resultado de 12 ÷ 4 es:", opciones: ['3', '4', '2', '6'], correcta: "A" },
-  { text: "El agua hierve a:", opciones: ['0°C', '50°C', '100°C', '200°C'], correcta: "C" },
-  { text: "La fotosíntesis ocurre en:", opciones: ['La raíz', 'La flor', 'La hoja', 'El tallo'], correcta: "C" },
-  { text: "El valor de pi es aproximadamente:", opciones: ['3.12', '3.14', '3.16', '3.18'], correcta: "B" },
-  { text: "¿Cuál es el sinónimo de 'rápido'?", opciones: ['Lento', 'Ágil', 'Tardío', 'Pesado'], correcta: "B" },
-  { text: "¿Qué número sigue en la serie: 2, 4, 6, 8...?", opciones: ['10', '12', '14', '16'], correcta: "A" },
-  { text: "¿Cuál es el resultado de 5 x 6?", opciones: ['11', '30', '20', '36'], correcta: "B" },
-  { text: "La capital de México es:", opciones: ['Monterrey', 'Puebla', 'CDMX', 'Guadalajara'], correcta: "C" },
-  { text: "¿Qué planeta es conocido como el Planeta Rojo?", opciones: ['Venus', 'Marte', 'Júpiter', 'Saturno'], correcta: "B" },
-  { text: "¿Quién fue el iniciador de la Independencia de México?", opciones: ['Morelos', 'Juárez', 'Hidalgo', 'Zapata'], correcta: "C" },
-  { text: "El resultado de 12 ÷ 4 es:", opciones: ['3', '4', '2', '6'], correcta: "A" },
-  { text: "El agua hierve a:", opciones: ['0°C', '50°C', '100°C', '200°C'], correcta: "C" },
-  { text: "La fotosíntesis ocurre en:", opciones: ['La raíz', 'La flor', 'La hoja', 'El tallo'], correcta: "C" },
-  { text: "El valor de pi es aproximadamente:", opciones: ['3.12', '3.14', '3.16', '3.18'], correcta: "B" },
-  { text: "¿Cuál es el sinónimo de 'rápido'?", opciones: ['Lento', 'Ágil', 'Tardío', 'Pesado'], correcta: "B" },
-  { text: "¿Qué número sigue en la serie: 2, 4, 6, 8...?", opciones: ['10', '12', '14', '16'], correcta: "A" },
-  { text: "¿Cuál es el resultado de 5 x 6?", opciones: ['11', '30', '20', '36'], correcta: "B" },
-  { text: "La capital de México es:", opciones: ['Monterrey', 'Puebla', 'CDMX', 'Guadalajara'], correcta: "C" },
-  { text: "¿Qué planeta es conocido como el Planeta Rojo?", opciones: ['Venus', 'Marte', 'Júpiter', 'Saturno'], correcta: "B" },
-  { text: "¿Quién fue el iniciador de la Independencia de México?", opciones: ['Morelos', 'Juárez', 'Hidalgo', 'Zapata'], correcta: "C" },
-  { text: "El resultado de 12 ÷ 4 es:", opciones: ['3', '4', '2', '6'], correcta: "A" },
-  { text: "El agua hierve a:", opciones: ['0°C', '50°C', '100°C', '200°C'], correcta: "C" },
-  { text: "La fotosíntesis ocurre en:", opciones: ['La raíz', 'La flor', 'La hoja', 'El tallo'], correcta: "C" },
-  { text: "El valor de pi es aproximadamente:", opciones: ['3.12', '3.14', '3.16', '3.18'], correcta: "B" },
-  { text: "¿Cuál es el sinónimo de 'rápido'?", opciones: ['Lento', 'Ágil', 'Tardío', 'Pesado'], correcta: "B" },
-  { text: "¿Qué número sigue en la serie: 2, 4, 6, 8...?", opciones: ['10', '12', '14', '16'], correcta: "A" },
-  { text: "¿Cuál es el resultado de 5 x 6?", opciones: ['11', '30', '20', '36'], correcta: "B" },
-  { text: "La capital de México es:", opciones: ['Monterrey', 'Puebla', 'CDMX', 'Guadalajara'], correcta: "C" },
-  { text: "¿Qué planeta es conocido como el Planeta Rojo?", opciones: ['Venus', 'Marte', 'Júpiter', 'Saturno'], correcta: "B" },
-  { text: "¿Quién fue el iniciador de la Independencia de México?", opciones: ['Morelos', 'Juárez', 'Hidalgo', 'Zapata'], correcta: "C" },
-  { text: "El resultado de 12 ÷ 4 es:", opciones: ['3', '4', '2', '6'], correcta: "A" },
-  { text: "El agua hierve a:", opciones: ['0°C', '50°C', '100°C', '200°C'], correcta: "C" },
-  { text: "La fotosíntesis ocurre en:", opciones: ['La raíz', 'La flor', 'La hoja', 'El tallo'], correcta: "C" },
-  { text: "El valor de pi es aproximadamente:", opciones: ['3.12', '3.14', '3.16', '3.18'], correcta: "B" },
-];
-
-
-    const lista = document.getElementById("lista-preguntas");
-    preguntas.forEach((pregunta, index) => {
-      const numero = index + 1;
-      const item = document.createElement("li");
-      const preguntaTexto = document.createElement("p");
-      preguntaTexto.textContent = `${numero}. ${pregunta.text}`;
-      item.appendChild(preguntaTexto);
-
-      ['A', 'B', 'C', 'D'].forEach((letra, i) => {
-        const label = document.createElement("label");
-        label.innerHTML = `<input type="radio" name="q${numero}" value="${letra}"> ${letra}) ${pregunta.opciones[i]}`;
-        item.appendChild(label);
-      });
-
-      lista.appendChild(item);
-    });
-
-    function verificarRespuestas() {
-      let aciertos = 0;
-      preguntas.forEach((pregunta, index) => {
-        const nombre = `q${index + 1}`;
-        const opciones = document.getElementsByName(nombre);
-        for (const opcion of opciones) {
-          if (opcion.checked && opcion.value === pregunta.correcta) {
-            aciertos++;
-          }
-        }
-      });
-      document.getElementById("resultado").textContent = `Aciertos: ${aciertos} de ${preguntas.length}`;
-    }
-  </script>
-</body>
-</html>
+<script>
+const preguntas = [
+  // FORMATO: { q: "texto pregunta", options: ["A) ...", "B) ...", ...], correct: 0 }
+  { q: "¿Qué números continúan en la sucesión? 1, 2, 3, 4, 5, 8", options: ["A) 7, 16", "B) 9, 15", "C) 11, 14", "D) 8, 11"], correct: 1 },
+  { q: "Encuentra el número que falta en la sucesión: 49, 62, 77, ___, 113, 134", options: ["A) 99", "B) 104", "C) 94", "D) 100"], correct: 1 },
+  { q: "Identifica el número que continúa en la sucesión –100, –10, –1", options: ["A) –0.01", "B) –0.1", "C) x0.01", "D) x0.1"], correct: 1 },
+  { q: "¿Cuál es el próximo número común de las sucesiones 3, 7, 11, 15… y 1, 8, 15, 22…?", options: ["A) 23", "B) 24", "C) 36", "D) 43"], correct: 3 },
+  { q: "¿Cuál es la figura que sigue en la secuencia?", options: ["A)", "B)", "C)", "D)"], correct: 0 },
+  { q: "¿Cuántos cuadrados formarán la figura número 11 en la sucesión de imágenes?", options: ["A) 45", "B) 66", "C) 78", "D) 55"], correct: 2 },
+  { q: "Identifica la octava figura de la siguiente serie.", options: ["A)", "B)", "C)", "D)"], correct: 0 },
+  { q: "¿Cuál es la imagen que completa la siguiente serie?", options: ["A)", "B)", "C)", "D)"], correct: 2 },
+  { q: "Señala cuál sería la representación de la estructura si se observara desde arriba.", options: ["A)", "B)", "C)", "D)"], correct: 1 },
+  { q: "¿Cuál es la figura que sigue en la secuencia?", options: ["A)", "B)", "C)", "D)"], correct: 2 },
+  { q: "¿Cuántos cuadros contiene la figura?", options: ["A) 8", "B) 11", "C) 12", "D) 10"], correct: 2 },
+  { q: "En una granja con 116 patas y 37 cabezas (solo caballos y gallinas), ¿cuántos hay de cada tipo?", options: ["A) 19 caballos y 18 gallinas", "B) 21 caballos y 16 gallinas", "C) 16 caballos y 21 gallinas", "D) 20 caballos y 17 gallinas"], correct: 3 },
+  { q: "¿Qué figura completa un cubo de 3x3x3 cubitos?", options: ["A)", "B)", "C)", "D)"], correct: 2 },
+  { q: "¿Cuál es el número que falta?", options: ["A) 44", "B) 46", "C) 48", "D) 50"], correct: 2 },
+  { q: "Todos los seres vivos poseen una estructura denominada…", options: ["A) tejido", "B) núcleo", "C) célula", "D) desmosoma"], correct: 2 },
+  { q: "La suma de dos números es 22 y su producto es 57. ¿Cuáles son?", options: ["A) 11 y 11", "B) 9 y 13", "C) 3 y 19", "D) 5 y 17"], correct: 1 },
+  { q: "Si el número de bacterias se duplica cada 3 minutos y hay 28 a las 9:00 am, ¿a qué hora habrá 224?", options: ["A) 9:30 am", "B) 9:15 am", "C) 9:03 pm", "D) 9:09 am"], correct: 3 },
+  { q: "¿Qué actividad humana pone en riesgo la biodiversidad?", options: ["A) Introducción de especies exóticas", "B) Incendios provocados", "C) Ecoturismo", "D) Caza deportiva"], correct: 1 },
+  { q: "¿Qué representa un avance en salud humana?", options: ["A) Sacarosa", "B) Colágeno", "C) Insulina", "D) Almidón"], correct: 2 },
+  { q: "¿Qué proceso transforma energía luminosa en química en autótrofos?", options: ["A) Regulación", "B) Fotosíntesis", "C) Respiración", "D) Oxidacion"], correct: 1 },
+  { q: "¿Cómo se denomina el conjunto de estrategias para satisfacer necesidades actuales y futuras sin comprometer los recursos naturales?", options: ["A) Desarrollo sustentable", "B) Mejoramiento del cultivo intensivo", "C) Desarrollo biotecnológico", "D) Revolución verde"], correct: 0 },
+  { q: "¿Qué acción previene enfermedades respiratorias causadas por contaminación ambiental?", options: ["A) Evitar aglomeraciones", "B) Protegerse cerrando puertas y ventanas", "C) Usar calefacción", "D) No tomar líquidos"], correct: 1 },
+  { q: "¿Qué se debe hacer para proveer al cuerpo de hierro si se padece anemia?", options: ["A) Consumir alimentos con vitamina C", "B) Consumir lípidos", "C) Tener una dieta equilibrada", "D) Tomar 2 litros de agua"], correct: 2 },
+  { q: "¿Qué permite la fijación del carbono en la biósfera y su liberación a la atmósfera?", options: ["A) Fotosíntesis – respiración", "B) Fermentación – fotosíntesis", "C) Respiración – fotosíntesis", "D) Fotosíntesis – quimiosíntesis"], correct: 0 },
+  { q: "¿Qué función tienen las fichas bibliográficas?", options: ["A) Localizar y conservar información", "B) Jerarquizar oraciones", "C) Citar párrafos", "D) Organizar ideas"], correct: 0 },
+  { q: "¿Qué tipo de reproducción disminuye los riesgos de extinción?", options: ["A) Externa", "B) Interna", "C) Sexual", "D) Asexual"], correct: 2 },
+  { q: "¿Qué unidades se ubican en los cromosomas?", options: ["A) Genes", "B) Centrómeros", "C) Nucleótidos", "D) Intrones"], correct: 0 },
+  { q: "¿Cuál ETS es causada por un virus?", options: ["A) Sífilis", "B) Candidiasis", "C) Gonorrea", "D) Papiloma humano"], correct: 3 },
+  { q: "¿Cuál es el tema principal del siguiente cuadro sinóptico?", options: ["A) Categoría semántica", "B) Enunciado bimembre", "C) Categoría gramatical", "D) Enunciado unimembre"], correct: 2 },
+  { q: "¿Cuál párrafo plantea el asunto de un texto expositivo?", options: ["A) I", "B) II", "C) III", "D) IV"], correct: 1 },
+  { q: "¿Qué enunciado encadena argumentos?", options: ["A) Trabaja para pagar sus estudios", "B) Es demasiado inteligente, pero flojo", "C) Es indudable que tiene miedo", "D) Es tan terco que todo le sale mal"], correct: 2 },
+  { q: "¿Qué enunciado expresa una jerarquización?", options: ["A) Es indispensable que termines el ensayo", "B) El italiano como el francés son lenguas romances", "C) La razón más importante por la que estudio es para ganar una beca", "D) No logro agradarte por más que me esfuerce"], correct: 2 },
+  { q: "¿Qué oraciones usan nexos para introducir ideas?", options: ["A) IV", "B) I", "C) II", "D) III"], correct: 1 },
+  { q: "Elige los enunciados que usan nexos de introducción:", options: ["A) I y III", "B) II y IV", "C) II y V", "D) III y V"], correct: 3 },
+  { q: "¿Qué uso de la coma está presente en los enunciados?", options: ["A) En enumeraciones, para separar sustantivos, adjetivos, verbos y frases", "B) Para oración explicativa entre comas", "C) Antes de conjunciones adversativas", "D) En enumeraciones de clases de sentidos"], correct: 0 },
+  { q: "¿Qué función cumplen la coma y el punto y seguido?", options: ["A) Destacar complementos", "B) Separar oraciones", "C) Delimitar vocativos", "D) Citar enumeraciones"], correct: 1 },
+  { q: "¿A qué tipo de texto corresponde el ejemplo del asombro y la sorpresa?", options: ["A) Poético", "B) Literario", "C) Filosófico", "D) Histórico"], correct: 2 },
+  { q: "En el texto “Los secretos del abuelo”, ¿qué contiene la frase subrayada?", options: ["A) Aposición, adjetivo, participio", "B) Adjetivo, aposición, participio", "C) Adjetivo, participio, aposición", "D) Aposición, participio, adjetivo"], correct: 0 },
+  { q: "¿Qué texto publicitario exagera las cualidades del producto?", options: ["A) “Yo sin Bic, no puedo vivir”", "B) “Mejor, mejora, Mejoral”", "C) “Por su rico sabor casero, Tía Rosa”", "D) “Con el cariño de siempre, Bimbo”"], correct: 0 },
+  { q: "¿Cuáles son propiedades físicas de los gases?", options: ["A) Difusibilidad y volumen propio", "B) Volumen definido y maleabilidad", "C) Volumen y forma indefinida", "D) Forma indefinida y maleabilidad"], correct: 2 },
+  { q: "¿Qué ocurre cuando frotas un globo con lana?", options: ["A) Se electriza por fricción", "B) Se magnetiza por inducción", "C) Se polariza por contacto", "D) Se funde el material"], correct: 0 },
+  { q: "¿Qué fenómeno físico permite que un clavo se mantenga en una tabla al ser golpeado?", options: ["A) Gravedad", "B) Fuerza de fricción", "C) Magnetismo", "D) Fuerza centrípeta"], correct: 1 },
+  { q: "¿Qué ocurre cuando aumentas la pendiente de una rampa?", options: ["A) La fuerza de fricción disminuye", "B) La velocidad del objeto aumenta", "C) El peso del objeto disminuye", "D) La masa del objeto cambia"], correct: 1 },
+  { q: "¿Cuál es un ejemplo de transformación de energía cinética en térmica?", options: ["A) Un ventilador", "B) Frotarse las manos", "C) Un foco encendido", "D) Una polea"], correct: 1 },
+  { q: "¿Qué propiedad de la materia está relacionada con la capacidad de flotar o hundirse?", options: ["A) Peso", "B) Masa", "C) Densidad", "D) Volumen"], correct: 2 },
+  { q: "¿Qué instrumento se utiliza para medir la masa?", options: ["A) Termómetro", "B) Regla", "C) Balanza", "D) Dinamómetro"], correct: 2 },
+  { q: "¿Qué ocurre si mezclas arena y limaduras de hierro?", options: ["A) Se forma una disolución", "B) Hay una reacción química", "C) Es una mezcla que se puede separar con un imán", "D) Se forma un compuesto"], correct: 2 },
+  { q: "¿Qué enunciado presenta una propiedad intensiva?", options: ["A) La masa del oro es 250 g", "B) El volumen de agua es 1 L", "C) El cobre pesa 100 g", "D) La densidad del plomo es 11.3 g/cm³"], correct: 3 },
+  { q: "¿Qué ocurre en una reacción exotérmica?", options: ["A) Libera energía", "B) Absorbe energía", "C) Cambia el volumen", "D) Se evapora"], correct: 0 },
+  { q: "¿Qué proceso no altera la naturaleza química de la sustancia?", options: ["A) Oxidación", "B) Disolución", "C) Fermentación", "D) Combustión"], correct: 1 },
+  { q: "¿Qué proceso representa un cambio químico?", options: ["A) Hervir agua", "B) Fundir metal", "C) Quemar papel", "D) Cortar madera"], correct: 2 },
+  { q: "¿Cuál es una propiedad de los metales?", options: ["A) No conducen electricidad", "B) Son dúctiles", "C) Son frágiles", "D) No reflejan la luz"], correct: 1 },
+  { q: "¿Cuál es un ejemplo de mezcla homogénea?", options: ["A) Arena con sal", "B) Agua con sal", "C) Aceite con agua", "D) Arroz con lentejas"], correct: 1 },
+  { q: "¿Qué enunciado es correcto respecto al modelo atómico de Bohr?", options: ["A) Los electrones están fijos", "B) Los electrones giran en órbitas", "C) Los protones se mueven libremente", "D) El núcleo no tiene carga"], correct: 1 },
+  { q: "
