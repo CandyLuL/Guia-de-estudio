@@ -1,120 +1,231 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Simulacro ECOEMS – Guía Oficial</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Cuestionario Opción Múltiple</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
-    .pregunta { margin-bottom: 20px; }
-    .resultado { font-weight: bold; margin-top: 20px; font-size: 1.2em; }
-    .boton-final { margin-top: 30px; }
+    body { background: #f5f6fa; font-family: Arial, sans-serif; }
+    .container { max-width: 900px; margin: 30px auto; background: #fff; padding: 32px 18px 32px 32px; border-radius: 14px; box-shadow: 0 4px 20px #0001; }
+    h1 { text-align: center; color: #1976d2; }
+    .question { margin-bottom: 16px; padding: 12px; border-bottom: 1px solid #e0e0e0; border-radius: 10px; }
+    .q-title { font-weight: bold; margin-bottom: 6px; }
+    .options label { display: block; margin-bottom: 5px; cursor: pointer; padding-left: 6px; border-radius: 4px; transition: background 0.2s; }
+    .options input[type="radio"] { margin-right: 7px; accent-color: #1976d2; }
+    .correct { background: #a5d6a7 !important; }
+    .incorrect { background: #ef9a9a !important; }
+    .show-answer { background: #fff8e1; font-weight: bold; }
+    .btns { display: flex; gap: 12px; justify-content: center; margin: 22px 0 10px; flex-wrap: wrap; }
+    button { background: #1976d2; color: #fff; border: none; border-radius: 7px; padding: 12px 24px; font-size: 17px; cursor: pointer; box-shadow: 0 2px 6px #0002; transition: background 0.22s; }
+    button:hover { background: #135cb2; }
+    .score { text-align: center; font-size: 22px; margin-bottom: 16px; font-weight: bold; color: #2e7d32; }
+    @media (max-width: 600px) { .container { padding: 6vw 2vw 8vw 3vw; } }
   </style>
 </head>
 <body>
-  <h1>🧪 Simulacro ECOEMS – Basado en la Guía Oficial</h1>
-  <form id="form-simulacro2">
-<div class="pregunta"><p><strong>Pregunta 1:</strong> ¿Qué figura completa correctamente la serie?</p>
-<label><input type="radio" name="p1" value="a"> A) Figura A</label><br>
-<label><input type="radio" name="p1" value="b"> B) Figura B</label><br>
-<label><input type="radio" name="p1" value="c"> C) Figura C</label><br>
-<label><input type="radio" name="p1" value="d"> D) Figura D</label><br>
-</div>
-<div class="pregunta"><p><strong>Pregunta 2:</strong> ¿Cuál de las siguientes palabras es antónimo de 'alegría'?</p>
-<label><input type="radio" name="p2" value="a"> A) Felicidad</label><br>
-<label><input type="radio" name="p2" value="b"> B) Tristeza</label><br>
-<label><input type="radio" name="p2" value="c"> C) Risa</label><br>
-<label><input type="radio" name="p2" value="d"> D) Amor</label><br>
-</div>
-<div class="pregunta"><p><strong>Pregunta 3:</strong> ¿Qué número continúa la serie: 2, 4, 8, 16, ...?</p>
-<label><input type="radio" name="p3" value="a"> A) 18</label><br>
-<label><input type="radio" name="p3" value="b"> B) 24</label><br>
-<label><input type="radio" name="p3" value="c"> C) 32</label><br>
-<label><input type="radio" name="p3" value="d"> D) 64</label><br>
-</div>
-<div class="pregunta"><p><strong>Pregunta 4:</strong> ¿Qué palabra no pertenece al grupo?</p>
-<label><input type="radio" name="p4" value="a"> A) Manzana</label><br>
-<label><input type="radio" name="p4" value="b"> B) Plátano</label><br>
-<label><input type="radio" name="p4" value="c"> C) Zanahoria</label><br>
-<label><input type="radio" name="p4" value="d"> D) Pera</label><br>
-</div>
-<div class="pregunta"><p><strong>Pregunta 5:</strong> ¿Cuál es la capital de Francia?</p>
-<label><input type="radio" name="p5" value="a"> A) Berlín</label><br>
-<label><input type="radio" name="p5" value="b"> B) Madrid</label><br>
-<label><input type="radio" name="p5" value="c"> C) París</label><br>
-<label><input type="radio" name="p5" value="d"> D) Roma</label><br>
-</div>
-<div class="pregunta"><p><strong>Pregunta 6:</strong> ¿Cuánto es 15% de 200?</p>
-<label><input type="radio" name="p6" value="a"> A) 25</label><br>
-<label><input type="radio" name="p6" value="b"> B) 30</label><br>
-<label><input type="radio" name="p6" value="c"> C) 35</label><br>
-<label><input type="radio" name="p6" value="d"> D) 40</label><br>
-</div>
-<div class="pregunta"><p><strong>Pregunta 7:</strong> ¿Qué órgano bombea sangre al cuerpo?</p>
-<label><input type="radio" name="p7" value="a"> A) Hígado</label><br>
-<label><input type="radio" name="p7" value="b"> B) Pulmón</label><br>
-<label><input type="radio" name="p7" value="c"> C) Corazón</label><br>
-<label><input type="radio" name="p7" value="d"> D) Estómago</label><br>
-</div>
-<div class="pregunta"><p><strong>Pregunta 8:</strong> ¿Quién escribió 'El Quijote'?</p>
-<label><input type="radio" name="p8" value="a"> A) Gabriel García Márquez</label><br>
-<label><input type="radio" name="p8" value="b"> B) Miguel de Cervantes</label><br>
-<label><input type="radio" name="p8" value="c"> C) Pablo Neruda</label><br>
-<label><input type="radio" name="p8" value="d"> D) Federico García Lorca</label><br>
-</div>
-<div class="pregunta"><p><strong>Pregunta 9:</strong> ¿Cuál es el resultado de 3² + 4²?</p>
-<label><input type="radio" name="p9" value="a"> A) 25</label><br>
-<label><input type="radio" name="p9" value="b"> B) 20</label><br>
-<label><input type="radio" name="p9" value="c"> C) 12</label><br>
-<label><input type="radio" name="p9" value="d"> D) 5</label><br>
-</div>
-<div class="pregunta"><p><strong>Pregunta 10:</strong> ¿Qué gas es esencial para la respiración humana?</p>
-<label><input type="radio" name="p10" value="a"> A) Hidrógeno</label><br>
-<label><input type="radio" name="p10" value="b"> B) Dióxido de carbono</label><br>
-<label><input type="radio" name="p10" value="c"> C) Oxígeno</label><br>
-<label><input type="radio" name="p10" value="d"> D) Nitrógeno</label><br>
-</div>
-
-    <div class="boton-final">
-      <button type="button" onclick="calcularAciertos()">✅ Calcular aciertos</button>
-      <button type="button" onclick="reiniciarExamen()">🔄 Reiniciar examen</button>
+  <div class="container">
+    <h1>Cuestionario de Opción Múltiple</h1>
+    <div id="quiz"></div>
+    <div class="btns">
+      <button onclick="checkAnswers()">Revisar Aciertos</button>
+      <button onclick="resetQuiz()">Reiniciar</button>
+      <button onclick="showAnswers()">Mostrar Respuestas Correctas</button>
     </div>
-    <div id="resultado" class="resultado"></div>
-  </form>
+    <div class="score" id="score"></div>
+  </div>
 
-  <script>
-    const respuestasCorrectas = {
-"p1": "c",
-"p2": "b",
-"p3": "c",
-"p4": "c",
-"p5": "c",
-"p6": "b",
-"p7": "c",
-"p8": "b",
-"p9": "a",
-"p10": "c",
+<script>
+const preguntas = [
+  { q: "¿Qué números continúan en la sucesión? 1, 2, 3, 4, 5, 8", options: ["A) 7, 16", "B) 9, 15", "C) 11, 14", "D) 8, 11"], correct: 1 },
+  { q: "Encuentra el número que falta en la sucesión: 49, 62, 77, ___, 113, 134", options: ["A) 99", "B) 104", "C) 94", "D) 100"], correct: 1 },
+  { q: "Identifica el número que continúa en la sucesión –100, –10, –1", options: ["A) –0.01", "B) –0.1", "C) x0.01", "D) x0.1"], correct: 1 },
+  { q: "¿Cuál es el próximo número común de las sucesiones 3, 7, 11, 15… y 1, 8, 15, 22…?", options: ["A) 23", "B) 24", "C) 36", "D) 43"], correct: 3 },
+  { q: "¿Cuál es la figura que sigue en la secuencia?", options: ["A)", "B)", "C)", "D)"], correct: 0 },
+  { q: "¿Cuántos cuadrados formarán la figura número 11 en la sucesión de imágenes?", options: ["A) 45", "B) 66", "C) 78", "D) 55"], correct: 2 },
+  { q: "Identifica la octava figura de la siguiente serie.", options: ["A)", "B)", "C)", "D)"], correct: 0 },
+  { q: "¿Cuál es la imagen que completa la siguiente serie?", options: ["A)", "B)", "C)", "D)"], correct: 2 },
+  { q: "Señala cuál sería la representación de la estructura si se observara desde arriba.", options: ["A)", "B)", "C)", "D)"], correct: 1 },
+  { q: "¿Cuál es la figura que sigue en la secuencia?", options: ["A)", "B)", "C)", "D)"], correct: 2 },
+  { q: "¿Cuántos cuadros contiene la figura?", options: ["A) 8", "B) 11", "C) 12", "D) 10"], correct: 2 },
+  { q: "En una granja con 116 patas y 37 cabezas (solo caballos y gallinas), ¿cuántos hay de cada tipo?", options: ["A) 19 caballos y 18 gallinas", "B) 21 caballos y 16 gallinas", "C) 16 caballos y 21 gallinas", "D) 20 caballos y 17 gallinas"], correct: 3 },
+  { q: "¿Qué figura completa un cubo de 3x3x3 cubitos?", options: ["A)", "B)", "C)", "D)"], correct: 2 },
+  { q: "¿Cuál es el número que falta?", options: ["A) 44", "B) 46", "C) 48", "D) 50"], correct: 2 },
+  { q: "Todos los seres vivos poseen una estructura denominada…", options: ["A) tejido", "B) núcleo", "C) célula", "D) desmosoma"], correct: 2 },
+  { q: "La suma de dos números es 22 y su producto es 57. ¿Cuáles son?", options: ["A) 11 y 11", "B) 9 y 13", "C) 3 y 19", "D) 5 y 17"], correct: 1 },
+  { q: "Si el número de bacterias se duplica cada 3 minutos y hay 28 a las 9:00 am, ¿a qué hora habrá 224?", options: ["A) 9:30 am", "B) 9:15 am", "C) 9:03 pm", "D) 9:09 am"], correct: 3 },
+  { q: "¿Qué actividad humana pone en riesgo la biodiversidad?", options: ["A) Introducción de especies exóticas", "B) Incendios provocados", "C) Ecoturismo", "D) Caza deportiva"], correct: 1 },
+  { q: "¿Qué representa un avance en salud humana?", options: ["A) Sacarosa", "B) Colágeno", "C) Insulina", "D) Almidón"], correct: 2 },
+  { q: "¿Qué proceso transforma energía luminosa en química en autótrofos?", options: ["A) Regulación", "B) Fotosíntesis", "C) Respiración", "D) Oxidacion"], correct: 1 },
+  { q: "¿Cómo se denomina el conjunto de estrategias para satisfacer necesidades actuales y futuras sin comprometer los recursos naturales?", options: ["A) Desarrollo sustentable", "B) Mejoramiento del cultivo intensivo", "C) Desarrollo biotecnológico", "D) Revolución verde"], correct: 0 },
+  { q: "¿Qué acción previene enfermedades respiratorias causadas por contaminación ambiental?", options: ["A) Evitar aglomeraciones", "B) Protegerse cerrando puertas y ventanas", "C) Usar calefacción", "D) No tomar líquidos"], correct: 1 },
+  { q: "¿Qué se debe hacer para proveer al cuerpo de hierro si se padece anemia?", options: ["A) Consumir alimentos con vitamina C", "B) Consumir lípidos", "C) Tener una dieta equilibrada", "D) Tomar 2 litros de agua"], correct: 2 },
+  { q: "¿Qué permite la fijación del carbono en la biósfera y su liberación a la atmósfera?", options: ["A) Fotosíntesis – respiración", "B) Fermentación – fotosíntesis", "C) Respiración – fotosíntesis", "D) Fotosíntesis – quimiosíntesis"], correct: 0 },
+  { q: "¿Qué función tienen las fichas bibliográficas?", options: ["A) Localizar y conservar información", "B) Jerarquizar oraciones", "C) Citar párrafos", "D) Organizar ideas"], correct: 0 },
+  { q: "¿Qué tipo de reproducción disminuye los riesgos de extinción?", options: ["A) Externa", "B) Interna", "C) Sexual", "D) Asexual"], correct: 2 },
+  { q: "¿Qué unidades se ubican en los cromosomas?", options: ["A) Genes", "B) Centrómeros", "C) Nucleótidos", "D) Intrones"], correct: 0 },
+  { q: "¿Cuál ETS es causada por un virus?", options: ["A) Sífilis", "B) Candidiasis", "C) Gonorrea", "D) Papiloma humano"], correct: 3 },
+  { q: "¿Cuál es el tema principal del siguiente cuadro sinóptico?", options: ["A) Categoría semántica", "B) Enunciado bimembre", "C) Categoría gramatical", "D) Enunciado unimembre"], correct: 2 },
+  { q: "¿Cuál párrafo plantea el asunto de un texto expositivo?", options: ["A) I", "B) II", "C) III", "D) IV"], correct: 1 },
+  { q: "¿Qué enunciado encadena argumentos?", options: ["A) Trabaja para pagar sus estudios", "B) Es demasiado inteligente, pero flojo", "C) Es indudable que tiene miedo", "D) Es tan terco que todo le sale mal"], correct: 2 },
+  { q: "¿Qué enunciado expresa una jerarquización?", options: ["A) Es indispensable que termines el ensayo", "B) El italiano como el francés son lenguas romances", "C) La razón más importante por la que estudio es para ganar una beca", "D) No logro agradarte por más que me esfuerce"], correct: 2 },
+  { q: "¿Qué oraciones usan nexos para introducir ideas?", options: ["A) IV", "B) I", "C) II", "D) III"], correct: 1 },
+  { q: "Elige los enunciados que usan nexos de introducción:", options: ["A) I y III", "B) II y IV", "C) II y V", "D) III y V"], correct: 3 },
+  { q: "¿Qué uso de la coma está presente en los enunciados?", options: ["A) En enumeraciones, para separar sustantivos, adjetivos, verbos y frases", "B) Para oración explicativa entre comas", "C) Antes de conjunciones adversativas", "D) En enumeraciones de clases de sentidos"], correct: 0 },
+  { q: "¿Qué función cumplen la coma y el punto y seguido?", options: ["A) Destacar complementos", "B) Separar oraciones", "C) Delimitar vocativos", "D) Citar enumeraciones"], correct: 1 },
+  { q: "¿A qué tipo de texto corresponde el ejemplo del asombro y la sorpresa?", options: ["A) Poético", "B) Literario", "C) Filosófico", "D) Histórico"], correct: 2 },
+  { q: "En el texto “Los secretos del abuelo”, ¿qué contiene la frase subrayada?", options: ["A) Aposición, adjetivo, participio", "B) Adjetivo, aposición, participio", "C) Adjetivo, participio, aposición", "D) Aposición, participio, adjetivo"], correct: 0 },
+  { q: "¿Qué texto publicitario exagera las cualidades del producto?", options: ["A) “Yo sin Bic, no puedo vivir”", "B) “Mejor, mejora, Mejoral”", "C) “Por su rico sabor casero, Tía Rosa”", "D) “Con el cariño de siempre, Bimbo”"], correct: 0 },
+  { q: "¿Cuáles son propiedades físicas de los gases?", options: ["A) Difusibilidad y volumen propio", "B) Volumen definido y maleabilidad", "C) Volumen y forma indefinida", "D) Forma indefinida y maleabilidad"], correct: 2 }
+  ,
+  { q: "¿Qué ocurre cuando frotas un globo con lana?", options: ["A) Se electriza por fricción", "B) Se magnetiza por inducción", "C) Se polariza por contacto", "D) Se funde el material"], correct: 0 },
+  { q: "¿Qué fenómeno físico permite que un clavo se mantenga en una tabla al ser golpeado?", options: ["A) Gravedad", "B) Fuerza de fricción", "C) Magnetismo", "D) Fuerza centrípeta"], correct: 1 },
+  { q: "¿Qué ocurre cuando aumentas la pendiente de una rampa?", options: ["A) La fuerza de fricción disminuye", "B) La velocidad del objeto aumenta", "C) El peso del objeto disminuye", "D) La masa del objeto cambia"], correct: 1 },
+  { q: "¿Cuál es un ejemplo de transformación de energía cinética en térmica?", options: ["A) Un ventilador", "B) Frotarse las manos", "C) Un foco encendido", "D) Una polea"], correct: 1 },
+  { q: "¿Qué propiedad de la materia está relacionada con la capacidad de flotar o hundirse?", options: ["A) Peso", "B) Masa", "C) Densidad", "D) Volumen"], correct: 2 },
+  { q: "¿Qué instrumento se utiliza para medir la masa?", options: ["A) Termómetro", "B) Regla", "C) Balanza", "D) Dinamómetro"], correct: 2 },
+  { q: "¿Qué ocurre si mezclas arena y limaduras de hierro?", options: ["A) Se forma una disolución", "B) Hay una reacción química", "C) Es una mezcla que se puede separar con un imán", "D) Se forma un compuesto"], correct: 2 },
+  { q: "¿Qué enunciado presenta una propiedad intensiva?", options: ["A) La masa del oro es 250 g", "B) El volumen de agua es 1 L", "C) El cobre pesa 100 g", "D) La densidad del plomo es 11.3 g/cm³"], correct: 3 },
+  { q: "¿Qué ocurre en una reacción exotérmica?", options: ["A) Libera energía", "B) Absorbe energía", "C) Cambia el volumen", "D) Se evapora"], correct: 0 },
+  { q: "¿Qué proceso no altera la naturaleza química de la sustancia?", options: ["A) Oxidación", "B) Disolución", "C) Fermentación", "D) Combustión"], correct: 1 },
+  { q: "¿Qué proceso representa un cambio químico?", options: ["A) Hervir agua", "B) Fundir metal", "C) Quemar papel", "D) Cortar madera"], correct: 2 },
+  { q: "¿Cuál es una propiedad de los metales?", options: ["A) No conducen electricidad", "B) Son dúctiles", "C) Son frágiles", "D) No reflejan la luz"], correct: 1 },
+  { q: "¿Cuál es un ejemplo de mezcla homogénea?", options: ["A) Arena con sal", "B) Agua con sal", "C) Aceite con agua", "D) Arroz con lentejas"], correct: 1 },
+  { q: "¿Qué enunciado es correcto respecto al modelo atómico de Bohr?", options: ["A) Los electrones están fijos", "B) Los electrones giran en órbitas", "C) Los protones se mueven libremente", "D) El núcleo no tiene carga"], correct: 1 },
+  { q: "¿Cuál es la fórmula química del agua?", options: ["A) H₂O", "B) H₂O₂", "C) O₂H", "D) HO₂"], correct: 0 },
+  { q: "¿Qué función tiene un catalizador en una reacción química?", options: ["A) Absorber energía", "B) Aumentar la velocidad de reacción", "C) Disminuir la masa", "D) Cambiar la fórmula"], correct: 1 },
+  { q: "¿Qué gas es esencial para la respiración celular?", options: ["A) Hidrógeno", "B) Oxígeno", "C) Nitrógeno", "D) Dióxido de carbono"], correct: 1 },
+  { q: "¿Cuál es la función del cloro en el agua potable?", options: ["A) Eliminar microorganismos", "B) Hacerla más clara", "C) Aumentar su sabor", "D) Disminuir su dureza"], correct: 0 },
+  { q: "¿Cuál es un ejemplo de una base?", options: ["A) Vinagre", "B) Hidróxido de sodio", "C) Ácido sulfúrico", "D) Limón"], correct: 1 },
+  { q: "¿Qué tipo de texto busca convencer mediante argumentos?", options: ["A) Descriptivo", "B) Argumentativo", "C) Narrativo", "D) Expositivo"], correct: 1 },
+  { q: "¿Qué recurso se utiliza para reforzar una idea dentro de un texto?", options: ["A) Descripción", "B) Reiteración", "C) Analogía", "D) Ironía"], correct: 1 },
+  { q: "¿Qué texto muestra una intención informativa?", options: ["A) Poema", "B) Novela", "C) Entrevista", "D) Reportaje"], correct: 3 },
+  { q: "¿Cuál es la función del texto instructivo?", options: ["A) Narrar eventos", "B) Convencer sobre un tema", "C) Indicar pasos o procedimientos", "D) Expresar sentimientos"], correct: 2 },
+  { q: "¿Qué tipo de texto presenta hechos reales organizados cronológicamente?", options: ["A) Narrativo", "B) Histórico", "C) Publicitario", "D) Literario"], correct: 1 },
+  { q: "¿Cuál oración es un enunciado unimembre?", options: ["A) ¡Auxilio!", "B) Me duele la cabeza", "C) Estoy llorando", "D) Quiero agua"], correct: 0 },
+  { q: "¿Qué oración es un enunciado bimembre?", options: ["A) ¡Silencio!", "B) ¡Cuidado!", "C) ¡Fuego!", "D) El gato duerme"], correct: 3 },
+  { q: "¿Qué oración expresa una opinión?", options: ["A) México tiene más de 120 millones de habitantes", "B) El libro me pareció aburrido", "C) El sol sale por el este", "D) El agua hierve a 100°C"], correct: 1 },
+  { q: "¿Qué oración es un hecho?", options: ["A) La Tierra gira alrededor del Sol", "B) Me gusta el chocolate", "C) La música es hermosa", "D) Es la mejor película del año"], correct: 0 },
+  { q: "¿Qué texto tiene una función apelativa?", options: ["A) Poema", "B) Anuncio publicitario", "C) Cuento", "D) Leyenda"], correct: 1 },
+  { q: "¿Qué texto busca provocar una respuesta del receptor?", options: ["A) Científico", "B) Publicitario", "C) Narrativo", "D) Lírico"], correct: 1 },
+  { q: "¿Qué figura literaria compara dos elementos con “como”?", options: ["A) Metáfora", "B) Símil", "C) Hipérbole", "D) Antítesis"], correct: 1 },
+  { q: "¿Qué figura literaria exagera una característica?", options: ["A) Metáfora", "B) Símil", "C) Hipérbole", "D) Ironía"], correct: 2 },
+  { q: "¿Qué figura literaria es una comparación implícita?", options: ["A) Metáfora", "B) Símil", "C) Hipérbole", "D) Paradoja"], correct: 0 },
+  { q: "¿Qué elemento da musicalidad a un poema?", options: ["A) Métrica", "B) Estrofa", "C) Rima", "D) Título"], correct: 2 },
+  { q: "¿Qué es un poema?", options: ["A) Texto que relata hechos históricos", "B) Texto que describe experimentos", "C) Composición literaria que expresa emociones", "D) Texto que ordena ideas"], correct: 2 },
+  { q: "¿Qué tipo de palabra lleva tilde si termina en vocal, n o s?", options: ["A) Palabra aguda", "B) Palabra grave", "C) Palabra esdrújula", "D) Palabra monosílaba"], correct: 0 },
+  { q: "¿Qué palabra lleva tilde?", options: ["A) Amor", "B) Papel", "C) Canción", "D) Computadora"], correct: 2 },
+  { q: "¿Cuál es una palabra grave sin tilde?", options: ["A) Móvil", "B) Árbol", "C) Casa", "D) Lápiz"], correct: 2 },
+  { q: "¿Cuál es una palabra esdrújula?", options: ["A) Café", "B) Animal", "C) Lógica", "D) Papel"], correct: 2 },
+  { q: "¿Qué se utiliza para separar elementos en una enumeración?", options: ["A) Coma", "B) Punto", "C) Punto y coma", "D) Dos puntos"], correct: 0 }
+ ,
+  { q: "¿Cuál de las siguientes palabras es un sustantivo abstracto?", options: ["A) Mesa", "B) Gato", "C) Silla", "D) Amor"], correct: 3 },
+  { q: "¿Qué oración tiene sujeto tácito?", options: ["A) Pedro come pizza", "B) Estudia para el examen", "C) Marta fue al cine", "D) Luis corre rápido"], correct: 1 },
+  { q: "¿Cuál oración tiene un complemento circunstancial de lugar?", options: ["A) María camina por el parque", "B) Juan estudia mucho", "C) Ellos viven felices", "D) Comieron pizza"], correct: 0 },
+  { q: "¿Qué palabra es un adjetivo calificativo?", options: ["A) Niño", "B) Inteligente", "C) Dormir", "D) Rápido"], correct: 1 },
+  { q: "¿Qué palabra es un verbo en infinitivo?", options: ["A) Caminé", "B) Correré", "C) Correr", "D) Corro"], correct: 2 },
+  { q: "¿Qué oración está en futuro?", options: ["A) Caminé al parque", "B) Iré al cine mañana", "C) Voy a casa", "D) Estoy estudiando"], correct: 1 },
+  { q: "¿Qué elemento provoca el día y la noche?", options: ["A) Traslación de la Tierra", "B) Rotación de la Tierra", "C) Fases lunares", "D) Órbita terrestre"], correct: 1 },
+  { q: "¿Qué capa de la Tierra se encuentra más cerca del núcleo?", options: ["A) Corteza", "B) Manto superior", "C) Manto inferior", "D) Núcleo"], correct: 3 },
+  { q: "¿Qué tipo de energía se obtiene del Sol?", options: ["A) Eólica", "B) Hidráulica", "C) Solar", "D) Nuclear"], correct: 2 },
+  { q: "¿Qué tipo de energía proviene del movimiento del agua?", options: ["A) Solar", "B) Geotérmica", "C) Hidroeléctrica", "D) Biomasa"], correct: 2 },
+  { q: "¿Qué gas contribuye al calentamiento global?", options: ["A) Oxígeno", "B) Dióxido de carbono", "C) Nitrógeno", "D) Helio"], correct: 1 },
+  { q: "¿Qué zona de la Tierra recibe más radiación solar?", options: ["A) Trópico de Cáncer", "B) Círculo Polar Ártico", "C) Ecuador", "D) Antártida"], correct: 2 },
+  { q: "¿Qué continente tiene mayor biodiversidad?", options: ["A) Europa", "B) Asia", "C) Oceanía", "D) América"], correct: 3 },
+  { q: "¿Qué océano se encuentra al este de América?", options: ["A) Pacífico", "B) Atlántico", "C) Índico", "D) Ártico"], correct: 1 },
+  { q: "¿Qué línea divide la Tierra en hemisferio norte y sur?", options: ["A) Meridiano de Greenwich", "B) Ecuador", "C) Trópico de Capricornio", "D) Círculo polar"], correct: 1 },
+  { q: "¿Qué elemento se utiliza para medir terremotos?", options: ["A) Termómetro", "B) Barómetro", "C) Sismógrafo", "D) Anemómetro"], correct: 2 },
+  { q: "¿Qué tipo de mapa muestra límites entre países?", options: ["A) Físico", "B) Climático", "C) Político", "D) Hidrográfico"], correct: 2 },
+  { q: "¿Qué es la geografía?", options: ["A) Ciencia que estudia el clima", "B) Ciencia que estudia la Tierra y su relación con el ser humano", "C) Ciencia que estudia los animales", "D) Ciencia que mide los volcanes"], correct: 1 },
+  { q: "¿Qué característica distingue a los mapas topográficos?", options: ["A) Usan colores vivos", "B) Representan el relieve", "C) Muestran rutas comerciales", "D) Enseñan climas"], correct: 1 },
+  { q: "¿Qué instrumento se usa para orientarse con el norte?", options: ["A) GPS", "B) Brújula", "C) Reloj solar", "D) Sismógrafo"], correct: 1 },
+  { q: "¿Qué país comparte frontera al norte de México?", options: ["A) Guatemala", "B) Estados Unidos", "C) Belice", "D) Colombia"], correct: 1 },
+  { q: "¿Qué característica distingue a un río?", options: ["A) Es agua salada", "B) Es corriente de agua dulce", "C) Tiene fondo rocoso", "D) Se encuentra en montañas"], correct: 1 },
+  { q: "¿Qué cordillera atraviesa México de norte a sur?", options: ["A) Himalaya", "B) Sierra Madre", "C) Andes", "D) Alpes"], correct: 1 },
+  { q: "¿Qué elemento es esencial para una democracia?", options: ["A) Prohibición de derechos", "B) Participación ciudadana", "C) Dictadura", "D) Represión militar"], correct: 1 },
+  { q: "¿Qué derecho garantiza que todas las personas sean tratadas con dignidad?", options: ["A) Derecho a la igualdad", "B) Derecho a la educación", "C) Derecho al trabajo", "D) Derecho a la libertad de expresión"], correct: 0 },
+  { q: "¿Qué institución protege los derechos de los niños en México?", options: ["A) INEGI", "B) DIF", "C) SEP", "D) SAT"], correct: 1 },
+  { q: "¿Cuál es una responsabilidad ciudadana?", options: ["A) Pedir ayuda", "B) Viajar", "C) Votar", "D) Trabajar en el extranjero"], correct: 2 },
+  { q: "¿Qué acción fomenta la convivencia escolar?", options: ["A) El respeto entre compañeros", "B) Castigar al que se equivoca", "C) Ignorar opiniones", "D) Gritar para tener razón"], correct: 0 },
+  { q: "¿Qué actitud favorece el diálogo?", options: ["A) Interrumpir", "B) Escuchar con atención", "C) Gritar más fuerte", "D) Descalificar"], correct: 1 },
+  { q: "¿Qué se promueve al respetar las normas?", options: ["A) Desigualdad", "B) Autoritarismo", "C) Convivencia y orden", "D) Pérdida de derechos"], correct: 2 },
+  { q: "¿Qué es necesario para resolver un conflicto pacíficamente?", options: ["A) Imponer la propia opinión", "B) Hacer acusaciones", "C) Dialogar y llegar a acuerdos", "D) Buscar venganza"], correct: 2 },
+  { q: "¿Qué es la empatía?", options: ["A) Aceptar todo sin pensar", "B) Comprender los sentimientos de otros", "C) Tener siempre la razón", "D) Ignorar emociones"], correct: 1 },
+  { q: "¿Qué promueve la tolerancia?", options: ["A) Desigualdad", "B) Aceptación de la diversidad", "C) Crítica agresiva", "D) Imposición de ideas"], correct: 1 },
+  { q: "¿Qué actitud permite trabajar en equipo?", options: ["A) Egoísmo", "B) Cooperación", "C) Aislamiento", "D) Imposición"], correct: 1 },
+  { q: "¿Qué es una regla?", options: ["A) Norma que regula la conducta", "B) Una herramienta escolar", "C) Derecho legal", "D) Opinión personal"], correct: 0 },
+  { q: "¿Qué garantiza una ley?", options: ["A) La opinión de una persona", "B) El poder de un grupo", "C) Los derechos de todos", "D) Las decisiones del gobierno"], correct: 2 },
+  { q: "¿Qué promueve la justicia?", options: ["A) El beneficio individual", "B) El trato equitativo para todos", "C) La competencia", "D) El castigo inmediato"], correct: 1 },
+  { q: "¿Qué permite una sociedad democrática?", options: ["A) Excluir a las minorías", "B) Participar en decisiones colectivas", "C) Imponer un solo punto de vista", "D) Evitar elecciones"], correct: 1 },
+  { q: "¿Qué se necesita para formar una opinión crítica?", options: ["A) Creer en todo", "B) Analizar información", "C) Repetir lo que otros dicen", "D) Ser negativo"], correct: 1 },
+  { q: "¿Qué actitud demuestra responsabilidad?", options: ["A) Cumplir con tus deberes", "B) Ignorar tareas", "C) Echar la culpa", "D) Hacer lo mínimo"], correct: 0 },
+  { q: "¿Qué acción ayuda a construir paz en la comunidad?", options: ["A) Agredir al que opina diferente", "B) Ignorar los problemas", "C) Resolver conflictos con diálogo", "D) Excluir al que se equivoca"], correct: 2 },
+  { q: "¿Qué favorece la equidad?", options: ["A) Dar más a quien tiene más", "B) Tratar igual a todos sin excepción", "C) Adaptar el trato según las necesidades", "D) Dejar que cada quien resuelva solo"], correct: 2 },
+  { q: "¿Qué institución protege los derechos humanos en México?", options: ["A) SEP", "B) SAT", "C) CNDH (Comisión Nacional de los Derechos Humanos)", "D) INE"], correct: 2 },
+  { q: "¿Qué valor se practica al cumplir promesas?", options: ["A) Tolerancia", "B) Responsabilidad", "C) Empatía", "D) Respeto"], correct: 1 },
+  { q: "¿Qué acción fortalece la democracia?", options: ["A) No participar en elecciones", "B) Censurar opiniones", "C) Votar y respetar resultados", "D) Favorecer a un solo grupo"], correct: 2 },
+  { q: "¿Qué se necesita para convivir con respeto?", options: ["A) Gritar para tener la razón", "B) Escuchar y valorar opiniones diferentes", "C) Imponer tus ideas", "D) Excluir al que no está de acuerdo"], correct: 1 },
+  { q: "¿Qué valor fomenta el trabajo en equipo?", options: ["A) Egoísmo", "B) Competencia", "C) Colaboración", "D) Individualismo"], correct: 2 },
+  { q: "¿Qué derecho tienen todos los niños?", options: ["A) Trabajar desde pequeños", "B) Jugar y recibir educación", "C) Ser castigados", "D) No tener responsabilidades"], correct: 1 }
+];
 
-    };
+// --- CIERRA el array aquí ---
 
-    function calcularAciertos() {
-      let aciertos = 0;
-      for (const [pregunta, correcta] of Object.entries(respuestasCorrectas)) {
-        const seleccionada = document.querySelector(`input[name="${pregunta}"]:checked`);
-        if (seleccionada && seleccionada.value === correcta) {
-          aciertos++;
+function renderQuiz() {
+  const quizDiv = document.getElementById('quiz');
+  quizDiv.innerHTML = '';
+  preguntas.forEach((p, i) => {
+    const qDiv = document.createElement('div');
+    qDiv.className = 'question';
+    qDiv.innerHTML = `
+      <div class="q-title">${i+1}. ${p.q}</div>
+      <div class="options">
+        ${p.options.map((opt, idx) =>
+          `<label><input type="radio" name="q${i}" value="${idx}"> ${opt}</label>`
+        ).join('')}
+      </div>
+    `;
+    quizDiv.appendChild(qDiv);
+  });
+  document.getElementById('score').innerText = "";
+}
+renderQuiz();
+
+function checkAnswers() {
+  let score = 0;
+  preguntas.forEach((p, i) => {
+    const options = document.getElementsByName('q'+i);
+    options.forEach((opt, idx) => {
+      opt.parentElement.classList.remove('correct', 'incorrect');
+      if (opt.checked) {
+        if (idx === p.correct) {
+          score++;
+          opt.parentElement.classList.add('correct');
+        } else {
+          opt.parentElement.classList.add('incorrect');
         }
       }
-      document.getElementById("resultado").innerText = `✅ Obtuviste ${aciertos} aciertos de ${Object.keys(respuestasCorrectas).length}.`;
-    }
+    });
+  });
+  document.getElementById('score').innerText = `¡Aciertos: ${score} de ${preguntas.length}!`;
+}
 
-    function reiniciarExamen() {
-      document.getElementById("form-simulacro2").reset();
-      document.getElementById("resultado").innerText = "";
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  </script>
+function resetQuiz() {
+  document.querySelectorAll('input[type=radio]').forEach(r => r.checked = false);
+  document.querySelectorAll('.correct, .incorrect, .show-answer').forEach(e => e.classList.remove('correct', 'incorrect', 'show-answer'));
+  document.getElementById('score').innerText = "";
+}
+
+function showAnswers() {
+  preguntas.forEach((p, i) => {
+    const options = document.getElementsByName('q'+i);
+    options.forEach((opt, idx) => {
+      opt.parentElement.classList.remove('show-answer');
+      if (idx === p.correct) {
+        opt.parentElement.classList.add('show-answer');
+      }
+    });
+  });
+}
+</script>
 </body>
 </html>
