@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,96 +19,89 @@
   <main>
     <section data-tema-id="mat_intro" id="mat_intro">
       <h2>Introducción al área de Matemáticas</h2>
-      <p>Esta sección abarca todos los contenidos evaluados en el examen ECOEMS en aritmética, álgebra, geometría, estadística y proporcionalidad.</p>
+      <p>Esta sección cubre aritmética, álgebra, geometría, proporcionalidad, y estadística. Estudia con teoría clara, ejemplos prácticos y ejercicios tipo ECOEMS.</p>
       <button onclick="marcarCompletado('mat_intro')">✅ Marcar como completado</button>
     </section>
 
+    <!-- ARITMÉTICA -->
     <section data-tema-id="aritmetica">
       <h3>1. Aritmética</h3>
-      <ul>
-        <li>Operaciones básicas con números naturales, enteros, fraccionarios y decimales</li>
-        <li>Mínimo común múltiplo y máximo común divisor</li>
-        <li>Potencias, raíces y jerarquía de operaciones</li>
-        <li>Porcentajes y descuentos</li>
-      </ul>
-      <p><strong>Ejercicio:</strong><br>
-      Si tienes $900 y obtienes un 10% de ganancia, ¿cuál es la venta total?<br>
-      A) $990 ✅<br>
-      B) $90<br>
-      C) $1,000<br>
-      D) $810
-      </p>
+      <p>La aritmética trabaja con operaciones básicas: suma, resta, multiplicación y división. También se incluyen potencias, raíces, fracciones y porcentajes.</p>
+      <p><strong>Ejemplo:</strong> ¿Cuánto es el 25% de 200?<br>Respuesta: 50, porque 200 × 0.25 = 50</p>
       <button onclick="marcarCompletado('aritmetica')">✅ Marcar como completado</button>
     </section>
 
+    <!-- ÁLGEBRA -->
     <section data-tema-id="algebra">
       <h3>2. Álgebra</h3>
-      <ul>
-        <li>Expresiones algebraicas</li>
-        <li>Factorización y operaciones con polinomios</li>
-        <li>Ecuaciones de primer grado</li>
-        <li>Desigualdades</li>
-      </ul>
-      <p><strong>Ejercicio:</strong><br>
-      Resuelve: 3x + 7 = 16<br>
-      A) x = 2<br>
-      B) x = 3<br>
-      C) x = 4 ✅<br>
-      D) x = 5
-      </p>
+      <p>El álgebra utiliza letras (variables) para representar cantidades. Se resuelven ecuaciones, se factorizan expresiones y se simplifican polinomios.</p>
+      <p><strong>Ejemplo:</strong> Resolver 2x + 4 = 10:<br>
+      Resta 4 a ambos lados: 2x = 6 → Divide entre 2: x = 3</p>
       <button onclick="marcarCompletado('algebra')">✅ Marcar como completado</button>
     </section>
 
+    <!-- GEOMETRÍA -->
     <section data-tema-id="geometria">
       <h3>3. Geometría</h3>
+      <p>Estudia figuras, ángulos, perímetros, áreas y volúmenes. Es vital conocer fórmulas básicas.</p>
       <ul>
-        <li>Área y perímetro de figuras planas</li>
-        <li>Teorema de Pitágoras</li>
-        <li>Volumen de prismas y cuerpos</li>
-        <li>Ángulos, triángulos y clasificación</li>
+        <li>Área cuadrado = lado × lado</li>
+        <li>Área triángulo = (base × altura) / 2</li>
+        <li>Volumen cubo = lado³</li>
       </ul>
-      <p><strong>Ejercicio:</strong><br>
-      Un triángulo rectángulo tiene catetos de 3 cm y 4 cm. ¿Cuál es la hipotenusa?<br>
-      A) 6 cm<br>
-      B) 7 cm<br>
-      C) 5 cm ✅<br>
-      D) 8 cm
-      </p>
+      <p><strong>Ejemplo:</strong> Si un triángulo tiene base 10 cm y altura 5 cm, su área es (10×5)/2 = 25 cm².</p>
       <button onclick="marcarCompletado('geometria')">✅ Marcar como completado</button>
     </section>
 
+    <!-- PROPORCIONALIDAD -->
     <section data-tema-id="proporcionalidad">
-      <h3>4. Proporcionalidad y porcentajes</h3>
-      <ul>
-        <li>Proporciones y reglas de tres</li>
-        <li>Aumentos y descuentos porcentuales</li>
-        <li>Problemas de razón y proporción</li>
-      </ul>
-      <p><strong>Ejercicio:</strong><br>
-      Si 5 dulces cuestan $25, ¿cuánto costarán 8 dulces?<br>
-      A) $30<br>
-      B) $35<br>
-      C) $40 ✅<br>
-      D) $45
-      </p>
+      <h3>4. Proporcionalidad</h3>
+      <p>Relaciona cantidades en escalas o razones. Muy útil para "regla de tres".</p>
+      <p><strong>Ejemplo:</strong> Si 5 cuadernos cuestan $40, ¿cuánto costarán 8?<br>
+      5 — 40<br>
+      8 — x<br>
+      x = (8×40)/5 = 64</p>
       <button onclick="marcarCompletado('proporcionalidad')">✅ Marcar como completado</button>
     </section>
 
+    <!-- ESTADÍSTICA -->
     <section data-tema-id="estadistica">
       <h3>5. Estadística y probabilidad</h3>
+      <p>Analiza datos para obtener:</p>
       <ul>
-        <li>Medidas de tendencia central: media, mediana y moda</li>
-        <li>Interpretación de gráficas</li>
-        <li>Experimentos aleatorios y espacio muestral</li>
+        <li><strong>Media:</strong> promedio = suma ÷ cantidad</li>
+        <li><strong>Mediana:</strong> número central</li>
+        <li><strong>Moda:</strong> el número que más se repite</li>
       </ul>
-      <p><strong>Ejercicio:</strong><br>
-      En un grupo, las edades son: 14, 15, 14, 16, 14. ¿Cuál es la moda?<br>
-      A) 15<br>
-      B) 14 ✅<br>
-      C) 16<br>
-      D) 13
-      </p>
+      <p><strong>Ejemplo:</strong> En la lista [5, 7, 7, 9, 10], la moda es 7.</p>
       <button onclick="marcarCompletado('estadistica')">✅ Marcar como completado</button>
+    </section>
+
+    <!-- SIMULACRO -->
+    <section data-tema-id="simulacro_matematicas">
+      <h3>Simulacro – Matemáticas (20 preguntas)</h3>
+      <ol>
+        <li>¿Cuánto es 20% de 150?<br>A) 25<br>B) 30 ✅<br>C) 50<br>D) 75</li>
+        <li>¿Resultado de 12 + (4×3)?<br>A) 48<br>B) 24<br>C) 20 ✅<br>D) 28</li>
+        <li>Si x = 3, ¿cuánto vale 2x + 1?<br>A) 5<br>B) 7 ✅<br>C) 6<br>D) 9</li>
+        <li>Si 4 lápices cuestan $10, ¿cuánto cuestan 6?<br>A) $12.5 ✅<br>B) $14<br>C) $15<br>D) $18</li>
+        <li>Área de cuadrado de 4 cm de lado:<br>A) 8 cm²<br>B) 12 cm²<br>C) 16 cm² ✅<br>D) 20 cm²</li>
+        <li>¿Cuál es la mediana de: 3, 5, 7, 8, 10?<br>A) 5<br>B) 6<br>C) 7 ✅<br>D) 8</li>
+        <li>¿Cuál número es múltiplo de 6?<br>A) 14<br>B) 24 ✅<br>C) 15<br>D) 13</li>
+        <li>Resultado de 5²:<br>A) 10<br>B) 25 ✅<br>C) 15<br>D) 5</li>
+        <li>Solución de 3x = 15:<br>A) x = 3<br>B) x = 4<br>C) x = 5 ✅<br>D) x = 6</li>
+        <li>Volumen de cubo de 3 cm:<br>A) 9 cm³<br>B) 18 cm³<br>C) 27 cm³ ✅<br>D) 36 cm³</li>
+        <li>¿Cuánto es 1/2 de 60?<br>A) 15<br>B) 30 ✅<br>C) 45<br>D) 25</li>
+        <li>¿Cuál número es primo?<br>A) 4<br>B) 9<br>C) 7 ✅<br>D) 8</li>
+        <li>Área de triángulo (b=6, h=4):<br>A) 24<br>B) 12 ✅<br>C) 10<br>D) 8</li>
+        <li>¿Cuál es el MCD de 18 y 24?<br>A) 3<br>B) 6 ✅<br>C) 12<br>D) 9</li>
+        <li>¿Qué representa “x” en álgebra?<br>A) Número constante<br>B) Resultado<br>C) Valor desconocido ✅<br>D) Resta</li>
+        <li>¿Cuál es la media de 6, 8, 10?<br>A) 8 ✅<br>B) 7<br>C) 9<br>D) 6</li>
+        <li>¿Cuánto es 0.25 en fracción?<br>A) 1/2<br>B) 1/3<br>C) 1/4 ✅<br>D) 3/4</li>
+        <li>¿Qué fórmula calcula el área de círculo?<br>A) b×h<br>B) π×r² ✅<br>C) l×l<br>D) 2πr</li>
+        <li>Si un producto cuesta $500 y tiene 10% de descuento:<br>A) $450 ✅<br>B) $475<br>C) $400<br>D) $550</li>
+        <li>¿Resultado de (2+3)²?<br>A) 10<br>B) 25 ✅<br>C) 9<br>D) 16</li>
+      </ol>
     </section>
   </main>
 
