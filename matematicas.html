@@ -1,112 +1,121 @@
 <!DOCTYPE html>
 <html lang="es">
->
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Matemáticas – ECOEMS 2025</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Matemáticas - ECOEMS 2025</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
 </head>
 <body>
   <header>
-    <h1>Matemáticas</h1>
+    <h1>Guía ECOEMS 2025 - Matemáticas</h1>
     <nav>
-      <a href="index.html">← Volver al inicio</a>
+      <a href="index.html">Inicio</a>
+      <a href="espanol.html">Español</a>
+      <a href="ciencias.html">Ciencias</a>
     </nav>
   </header>
 
   <main>
-    <section data-tema-id="mat_intro" id="mat_intro">
-      <h2>Introducción al área de Matemáticas</h2>
-      <p>Esta sección cubre aritmética, álgebra, geometría, proporcionalidad, y estadística. Estudia con teoría clara, ejemplos prácticos y ejercicios tipo ECOEMS.</p>
-      <button onclick="marcarCompletado('mat_intro')">✅ Marcar como completado</button>
-    </section>
+    <section>
+      <h2>Razonamiento Matemático</h2>
+      <p>En esta sección se evalúa tu capacidad para resolver problemas utilizando lógica, patrones, secuencias numéricas y relaciones entre figuras o números.</p>
 
-    <!-- ARITMÉTICA -->
-    <section data-tema-id="aritmetica">
-      <h3>1. Aritmética</h3>
-      <p>La aritmética trabaja con operaciones básicas: suma, resta, multiplicación y división. También se incluyen potencias, raíces, fracciones y porcentajes.</p>
-      <p><strong>Ejemplo:</strong> ¿Cuánto es el 25% de 200?<br>Respuesta: 50, porque 200 × 0.25 = 50</p>
-      <button onclick="marcarCompletado('aritmetica')">✅ Marcar como completado</button>
-    </section>
-
-    <!-- ÁLGEBRA -->
-    <section data-tema-id="algebra">
-      <h3>2. Álgebra</h3>
-      <p>El álgebra utiliza letras (variables) para representar cantidades. Se resuelven ecuaciones, se factorizan expresiones y se simplifican polinomios.</p>
-      <p><strong>Ejemplo:</strong> Resolver 2x + 4 = 10:<br>
-      Resta 4 a ambos lados: 2x = 6 → Divide entre 2: x = 3</p>
-      <button onclick="marcarCompletado('algebra')">✅ Marcar como completado</button>
-    </section>
-
-    <!-- GEOMETRÍA -->
-    <section data-tema-id="geometria">
-      <h3>3. Geometría</h3>
-      <p>Estudia figuras, ángulos, perímetros, áreas y volúmenes. Es vital conocer fórmulas básicas.</p>
+      <h3>Temas principales:</h3>
       <ul>
-        <li>Área cuadrado = lado × lado</li>
-        <li>Área triángulo = (base × altura) / 2</li>
-        <li>Volumen cubo = lado³</li>
+        <li>Patrones y secuencias</li>
+        <li>Series numéricas</li>
+        <li>Relaciones entre figuras</li>
+        <li>Analogías lógicas</li>
+        <li>Problemas de razonamiento lógico</li>
       </ul>
-      <p><strong>Ejemplo:</strong> Si un triángulo tiene base 10 cm y altura 5 cm, su área es (10×5)/2 = 25 cm².</p>
-      <button onclick="marcarCompletado('geometria')">✅ Marcar como completado</button>
-    </section>
 
-    <!-- PROPORCIONALIDAD -->
-    <section data-tema-id="proporcionalidad">
-      <h3>4. Proporcionalidad</h3>
-      <p>Relaciona cantidades en escalas o razones. Muy útil para "regla de tres".</p>
-      <p><strong>Ejemplo:</strong> Si 5 cuadernos cuestan $40, ¿cuánto costarán 8?<br>
-      5 — 40<br>
-      8 — x<br>
-      x = (8×40)/5 = 64</p>
-      <button onclick="marcarCompletado('proporcionalidad')">✅ Marcar como completado</button>
-    </section>
-
-    <!-- ESTADÍSTICA -->
-    <section data-tema-id="estadistica">
-      <h3>5. Estadística y probabilidad</h3>
-      <p>Analiza datos para obtener:</p>
-      <ul>
-        <li><strong>Media:</strong> promedio = suma ÷ cantidad</li>
-        <li><strong>Mediana:</strong> número central</li>
-        <li><strong>Moda:</strong> el número que más se repite</li>
-      </ul>
-      <p><strong>Ejemplo:</strong> En la lista [5, 7, 7, 9, 10], la moda es 7.</p>
-      <button onclick="marcarCompletado('estadistica')">✅ Marcar como completado</button>
-    </section>
-
-    <!-- SIMULACRO -->
-    <section data-tema-id="simulacro_matematicas">
-      <h3>Simulacro – Matemáticas (20 preguntas)</h3>
+      <h3>Ejercicios (20 Preguntas)</h3>
       <ol>
-        <li>¿Cuánto es 20% de 150?<br>A) 25<br>B) 30 ✅<br>C) 50<br>D) 75</li>
-        <li>¿Resultado de 12 + (4×3)?<br>A) 48<br>B) 24<br>C) 20 ✅<br>D) 28</li>
-        <li>Si x = 3, ¿cuánto vale 2x + 1?<br>A) 5<br>B) 7 ✅<br>C) 6<br>D) 9</li>
-        <li>Si 4 lápices cuestan $10, ¿cuánto cuestan 6?<br>A) $12.5 ✅<br>B) $14<br>C) $15<br>D) $18</li>
-        <li>Área de cuadrado de 4 cm de lado:<br>A) 8 cm²<br>B) 12 cm²<br>C) 16 cm² ✅<br>D) 20 cm²</li>
-        <li>¿Cuál es la mediana de: 3, 5, 7, 8, 10?<br>A) 5<br>B) 6<br>C) 7 ✅<br>D) 8</li>
-        <li>¿Cuál número es múltiplo de 6?<br>A) 14<br>B) 24 ✅<br>C) 15<br>D) 13</li>
-        <li>Resultado de 5²:<br>A) 10<br>B) 25 ✅<br>C) 15<br>D) 5</li>
-        <li>Solución de 3x = 15:<br>A) x = 3<br>B) x = 4<br>C) x = 5 ✅<br>D) x = 6</li>
-        <li>Volumen de cubo de 3 cm:<br>A) 9 cm³<br>B) 18 cm³<br>C) 27 cm³ ✅<br>D) 36 cm³</li>
-        <li>¿Cuánto es 1/2 de 60?<br>A) 15<br>B) 30 ✅<br>C) 45<br>D) 25</li>
-        <li>¿Cuál número es primo?<br>A) 4<br>B) 9<br>C) 7 ✅<br>D) 8</li>
-        <li>Área de triángulo (b=6, h=4):<br>A) 24<br>B) 12 ✅<br>C) 10<br>D) 8</li>
-        <li>¿Cuál es el MCD de 18 y 24?<br>A) 3<br>B) 6 ✅<br>C) 12<br>D) 9</li>
-        <li>¿Qué representa “x” en álgebra?<br>A) Número constante<br>B) Resultado<br>C) Valor desconocido ✅<br>D) Resta</li>
-        <li>¿Cuál es la media de 6, 8, 10?<br>A) 8 ✅<br>B) 7<br>C) 9<br>D) 6</li>
-        <li>¿Cuánto es 0.25 en fracción?<br>A) 1/2<br>B) 1/3<br>C) 1/4 ✅<br>D) 3/4</li>
-        <li>¿Qué fórmula calcula el área de círculo?<br>A) b×h<br>B) π×r² ✅<br>C) l×l<br>D) 2πr</li>
-        <li>Si un producto cuesta $500 y tiene 10% de descuento:<br>A) $450 ✅<br>B) $475<br>C) $400<br>D) $550</li>
-        <li>¿Resultado de (2+3)²?<br>A) 10<br>B) 25 ✅<br>C) 9<br>D) 16</li>
+        <li>¿Qué número continúa la serie? 2, 4, 8, 16, ___<br>
+          A) 18 B) 24 C) 32 D) 20</li>
+        <li>Si todos los zorros son mamíferos y algunos mamíferos son felinos, ¿cuál de las siguientes opciones es cierta?<br>
+          A) Todos los zorros son felinos B) Algunos zorros son felinos C) Algunos felinos no son zorros D) Ningún felino es mamífero</li>
+        <li>¿Qué figura completa la secuencia?<br>
+          A) Cuadrado B) Triángulo C) Círculo D) Pentágono</li>
+        <li>En un código, GATO se escribe como HBUP. ¿Cómo se escribe PERRO?<br>
+          A) QFSSP B) QFSSQ C) QFRTQ D) QGRSP</li>
+        <li>¿Cuál número falta? 5, 10, ___, 40, 80<br>
+          A) 15 B) 20 C) 25 D) 30</li>
+        <li>Si el día después de mañana es jueves, ¿qué día fue ayer?<br>
+          A) Lunes B) Martes C) Miércoles D) Domingo</li>
+        <li>Encuentra el número faltante en la serie: 1, 4, 9, 16, ___<br>
+          A) 20 B) 25 C) 27 D) 36</li>
+        <li>Si Ana es hermana de Luis y Luis es hijo de Marta, ¿qué relación hay entre Ana y Marta?<br>
+          A) Hija B) Madre C) Abuela D) Tía</li>
+        <li>Completa la secuencia: 1, 1, 2, 3, 5, ___<br>
+          A) 7 B) 8 C) 9 D) 10</li>
+        <li>¿Qué palabra no encaja?: Manzana - Pera - Zanahoria - Plátano<br>
+          A) Manzana B) Pera C) Zanahoria D) Plátano</li>
+        <li>Si 2x = 10, entonces x =<br>
+          A) 4 B) 5 C) 6 D) 8</li>
+        <li>¿Cuál es el número impar?: 24, 18, 13, 20<br>
+          A) 24 B) 13 C) 20 D) 18</li>
+        <li>Completa la serie: Lunes, Martes, Miércoles, ___<br>
+          A) Jueves B) Viernes C) Domingo D) Sábado</li>
+        <li>¿Qué sigue en la secuencia? 100, 90, 80, ___<br>
+          A) 70 B) 75 C) 60 D) 65</li>
+        <li>¿Qué número continúa?: 3, 6, 12, 24, ___<br>
+          A) 36 B) 48 C) 50 D) 60</li>
+        <li>Si María tiene el doble de edad que Sofía, y Sofía tiene 6, ¿cuántos años tiene María?<br>
+          A) 10 B) 12 C) 14 D) 16</li>
+        <li>¿Cuál es el opuesto de norte?<br>
+          A) Este B) Sur C) Oeste D) Noroeste</li>
+        <li>Si un número multiplicado por 3 da 21, ¿cuál es ese número?<br>
+          A) 5 B) 6 C) 7 D) 8</li>
+        <li>Completa la serie: A, C, E, G, ___<br>
+          A) I B) J C) H D) K</li>
+        <li>Si hoy es viernes, ¿qué día será dentro de 10 días?<br>
+          A) Lunes B) Martes C) Domingo D) Miércoles</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Habilidad Matemática</h2>
+      <p>Esta parte evalúa el conocimiento de operaciones básicas, álgebra, geometría, proporcionalidad, probabilidad y resolución de problemas prácticos.</p>
+
+      <h3>Temas importantes:</h3>
+      <ul>
+        <li>Números enteros, fracciones, decimales</li>
+        <li>Álgebra básica</li>
+        <li>Proporcionalidad</li>
+        <li>Geometría: perímetro, área y volumen</li>
+        <li>Estadística y probabilidad</li>
+      </ul>
+
+      <h3>Ejercicios (20 Preguntas)</h3>
+      <ol start="21">
+        <li>¿Cuál es el resultado de 8 × 6?<br>A) 42 B) 48 C) 54 D) 56</li>
+        <li>Si tienes 2/3 de una pizza y comes 1/3, ¿cuánto queda?<br>A) 1/3 B) 1/2 C) 2/3 D) 0</li>
+        <li>Convierte 0.75 a fracción:<br>A) 3/4 B) 1/2 C) 1/4 D) 2/3</li>
+        <li>Resuelve: 5x = 20. ¿x = ?<br>A) 2 B) 3 C) 4 D) 5</li>
+        <li>¿Cuál es el perímetro de un cuadrado de 5 cm de lado?<br>A) 10 B) 15 C) 20 D) 25</li>
+        <li>Un rectángulo mide 4 cm por 6 cm. ¿Cuál es su área?<br>A) 12 B) 24 C) 18 D) 36</li>
+        <li>¿Cuánto es 25% de 200?<br>A) 25 B) 50 C) 75 D) 100</li>
+        <li>¿Qué representa una probabilidad de 0.25?<br>A) 1 de cada 2 B) 1 de cada 4 C) 1 de cada 3 D) 1 de cada 5</li>
+        <li>¿Qué número falta? 5, 10, __, 20, 25<br>A) 12 B) 13 C) 15 D) 18</li>
+        <li>Si una figura tiene 5 lados, se llama:<br>A) Pentágono B) Hexágono C) Cuadrado D) Triángulo</li>
+        <li>Una bolsa tiene 3 canicas rojas y 2 azules. ¿Cuál es la probabilidad de sacar una roja?<br>A) 3/5 B) 2/5 C) 1/5 D) 1/2</li>
+        <li>Resuelve: (3 + 2) × 4<br>A) 20 B) 12 C) 10 D) 18</li>
+        <li>El doble del triple de 5 es:<br>A) 15 B) 30 C) 10 D) 25</li>
+        <li>¿Cuánto mide el ángulo recto?<br>A) 45° B) 60° C) 90° D) 120°</li>
+        <li>¿Cuál es el valor de π (pi) aproximado?<br>A) 2.14 B) 3.14 C) 3.00 D) 3.50</li>
+        <li>Si 2x + 1 = 9, ¿x = ?<br>A) 3 B) 4 C) 5 D) 6</li>
+        <li>¿Cuánto es 1/2 + 1/4?<br>A) 3/4 B) 1/2 C) 2/3 D) 1</li>
+        <li>Una caja contiene 12 bolas, 4 verdes, 4 rojas y 4 azules. ¿Qué fracción representa las rojas?<br>A) 1/3 B) 1/4 C) 1/2 D) 2/3</li>
+        <li>¿Cuál es el volumen de un cubo de 3 cm de lado?<br>A) 9 cm³ B) 18 cm³ C) 27 cm³ D) 36 cm³</li>
+        <li>¿Qué es una variable en álgebra?<br>A) Un número fijo B) Una letra que representa un número C) Un símbolo igual D) Un resultado</li>
       </ol>
     </section>
   </main>
 
   <footer>
-    <p>Guía ECOEMS – Matemáticas © 2025</p>
+    <p>Guía ECOEMS 2025 • Preparación completa para tu ingreso</p>
   </footer>
 </body>
 </html>
