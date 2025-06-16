@@ -1,164 +1,444 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html><html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Cuestionario Opción Múltiple</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulacro Ingreso EMS - Ecoems</title>
   <style>
-    body {
-      background: #f5f6fa;
-      font-family: Arial, sans-serif;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 850px;
-      margin: 20px auto;
-      background: #fff;
-      padding: 32px 18px 32px 32px;
-      border-radius: 14px;
-      box-shadow: 0 4px 20px #0001;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 18px;
-      color: #1976d2;
-    }
-    .question {
-      margin-bottom: 16px;
-      padding: 16px;
-      border-bottom: 1px solid #e0e0e0;
-      border-radius: 10px;
-    }
-    .q-title {
-      font-weight: bold;
-      margin-bottom: 6px;
-    }
-    .options label {
-      display: block;
-      margin-bottom: 5px;
-      cursor: pointer;
-      padding-left: 6px;
-      border-radius: 4px;
-      transition: background 0.2s;
-    }
-    .options input[type="radio"] {
-      margin-right: 7px;
-      accent-color: #1976d2;
-    }
-    .correct {
-      background: #a5d6a7 !important;
-    }
-    .incorrect {
-      background: #ef9a9a !important;
-    }
-    .show-answer {
-      background: #fff8e1;
-      font-weight: bold;
-    }
-    .btns {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      margin: 22px 0 10px;
-      flex-wrap: wrap;
-    }
-    button {
-      background: #1976d2;
-      color: #fff;
-      border: none;
-      border-radius: 7px;
-      padding: 12px 24px;
-      font-size: 17px;
-      cursor: pointer;
-      box-shadow: 0 2px 6px #0002;
-      transition: background 0.22s;
-    }
-    button:hover {
-      background: #135cb2;
-    }
-    .score {
-      text-align: center;
-      font-size: 22px;
-      margin-bottom: 16px;
-      font-weight: bold;
-      color: #2e7d32;
-    }
-    @media (max-width: 600px) {
-      .container {
-        padding: 6vw 2vw 8vw 3vw;
-      }
-    }
+    body { font-family: Arial, sans-serif; margin: 20px; background-color: #f8f9fa; }
+    h1 { color: #2c3e50; }
+    h2 { color: #34495e; }
+    .question { margin-bottom: 20px; padding: 10px; background: #fff; border: 1px solid #ccc; border-radius: 5px; }
+    .question p { font-weight: bold; }
+    button { margin-top: 20px; padding: 10px 15px; background: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #2980b9; }
+    #result { margin-top: 30px; padding: 20px; background: #ecf0f1; border-radius: 5px; }
+    .correct { color: green; }
+    .incorrect { color: red; }
   </style>
 </head>
-<body>
-  <div class="container">
-    <h1>Cuestionario de Opción Múltiple</h1>
-    <div id="quiz"></div>
-    <div class="btns">
-      <button onclick="checkAnswers()">Revisar Aciertos</button>
-      <button onclick="resetQuiz()">Reiniciar</button>
-      <button onclick="showAnswers()">Mostrar Respuestas Correctas</button>
-    </div>
-    <div class="score" id="score"></div>
+<body><h1>Simulacro de Examen - Ingreso a Media Superior</h1>
+<p><strong>Instrucciones:</strong> Selecciona una opción por cada pregunta. Al final, haz clic en "Enviar respuestas".</p><form id="quizForm">  <div class="question">
+    <p>1. ¿Qué número sigue? 3, 5, 9, 17, 33, 65, ___</p>
+    <label><input type="radio" name="q1" value="A"> A) 129</label><br>
+    <label><input type="radio" name="q1" value="B"> B) 89</label><br>
+    <label><input type="radio" name="q1" value="C"> C) 99</label><br>
+    <label><input type="radio" name="q1" value="D"> D) 79</label>
+  </div>  <div class="question">
+    <p>2. ¿Cuánto es 25% de 360?</p>
+    <label><input type="radio" name="q2" value="A"> A) 90</label><br>
+    <label><input type="radio" name="q2" value="B"> B) 100</label><br>
+    <label><input type="radio" name="q2" value="C"> C) 72</label><br>
+    <label><input type="radio" name="q2" value="D"> D) 85</label>
+  </div>  <div class="question">
+    <p>3. ¿Cuál es el resultado de: 2 × [1850 – (–1250)] ÷ 5?</p>
+    <label><input type="radio" name="q3" value="A"> A) –1240</label><br>
+    <label><input type="radio" name="q3" value="B"> B) 1240</label><br>
+    <label><input type="radio" name="q3" value="C"> C) 990</label><br>
+    <label><input type="radio" name="q3" value="D"> D) –990</label>
+  </div>  <div class="question">
+    <p>4. Si 3x + 2 = 17, ¿cuánto vale x?</p>
+    <label><input type="radio" name="q4" value="A"> A) 3</label><br>
+    <label><input type="radio" name="q4" value="B"> B) 5</label><br>
+    <label><input type="radio" name="q4" value="C"> C) 4</label><br>
+    <label><input type="radio" name="q4" value="D"> D) 6</label>
+  </div>  <div class="question">
+    <p>5. ¿Qué representa el área de un cuadrado de lado (2x + 5)?</p>
+    <label><input type="radio" name="q5" value="A"> A) 4x + 25</label><br>
+    <label><input type="radio" name="q5" value="B"> B) 2x² - 5</label><br>
+    <label><input type="radio" name="q5" value="C"> C) (2x + 5)²</label><br>
+    <label><input type="radio" name="q5" value="D"> D) 4x² + 25</label>
+  </div>  <div class="question">
+    <p>6. Si un kilo de carne costaba $120 y aumentó 250%, ¿cuánto cuesta ahora?</p>
+    <label><input type="radio" name="q6" value="A"> A) $150</label><br>
+    <label><input type="radio" name="q6" value="B"> B) $420</label><br>
+    <label><input type="radio" name="q6" value="C"> C) $300</label><br>
+    <label><input type="radio" name="q6" value="D"> D) $450</label>
+    <div class="question">
+    <p>7. ¿Cuál es el espacio muestral de lanzar 2 monedas?</p>
+    <label><input type="radio" name="q7" value="A"> A) {(C,C), (R,R)}</label><br>
+    <label><input type="radio" name="q7" value="B"> B) {(C,R), (R,C)}</label><br>
+    <label><input type="radio" name="q7" value="C"> C) {(C,C), (C,R), (R,C), (R,R)}</label><br>
+    <label><input type="radio" name="q7" value="D"> D) {(R,R)}</label>
   </div>
 
-<script>
-const preguntas = [
-  // FORMATO: { q: "texto pregunta", options: ["A) ...", "B) ...", ...], correct: 0 }
-  { q: "¿Qué números continúan en la sucesión? 1, 2, 3, 4, 5, 8", options: ["A) 7, 16", "B) 9, 15", "C) 11, 14", "D) 8, 11"], correct: 1 },
-  { q: "Encuentra el número que falta en la sucesión: 49, 62, 77, ___, 113, 134", options: ["A) 99", "B) 104", "C) 94", "D) 100"], correct: 1 },
-  { q: "Identifica el número que continúa en la sucesión –100, –10, –1", options: ["A) –0.01", "B) –0.1", "C) x0.01", "D) x0.1"], correct: 1 },
-  { q: "¿Cuál es el próximo número común de las sucesiones 3, 7, 11, 15… y 1, 8, 15, 22…?", options: ["A) 23", "B) 24", "C) 36", "D) 43"], correct: 3 },
-  { q: "¿Cuál es la figura que sigue en la secuencia?", options: ["A)", "B)", "C)", "D)"], correct: 0 },
-  { q: "¿Cuántos cuadrados formarán la figura número 11 en la sucesión de imágenes?", options: ["A) 45", "B) 66", "C) 78", "D) 55"], correct: 2 },
-  { q: "Identifica la octava figura de la siguiente serie.", options: ["A)", "B)", "C)", "D)"], correct: 0 },
-  { q: "¿Cuál es la imagen que completa la siguiente serie?", options: ["A)", "B)", "C)", "D)"], correct: 2 },
-  { q: "Señala cuál sería la representación de la estructura si se observara desde arriba.", options: ["A)", "B)", "C)", "D)"], correct: 1 },
-  { q: "¿Cuál es la figura que sigue en la secuencia?", options: ["A)", "B)", "C)", "D)"], correct: 2 },
-  { q: "¿Cuántos cuadros contiene la figura?", options: ["A) 8", "B) 11", "C) 12", "D) 10"], correct: 2 },
-  { q: "En una granja con 116 patas y 37 cabezas (solo caballos y gallinas), ¿cuántos hay de cada tipo?", options: ["A) 19 caballos y 18 gallinas", "B) 21 caballos y 16 gallinas", "C) 16 caballos y 21 gallinas", "D) 20 caballos y 17 gallinas"], correct: 3 },
-  { q: "¿Qué figura completa un cubo de 3x3x3 cubitos?", options: ["A)", "B)", "C)", "D)"], correct: 2 },
-  { q: "¿Cuál es el número que falta?", options: ["A) 44", "B) 46", "C) 48", "D) 50"], correct: 2 },
-  { q: "Todos los seres vivos poseen una estructura denominada…", options: ["A) tejido", "B) núcleo", "C) célula", "D) desmosoma"], correct: 2 },
-  { q: "La suma de dos números es 22 y su producto es 57. ¿Cuáles son?", options: ["A) 11 y 11", "B) 9 y 13", "C) 3 y 19", "D) 5 y 17"], correct: 1 },
-  { q: "Si el número de bacterias se duplica cada 3 minutos y hay 28 a las 9:00 am, ¿a qué hora habrá 224?", options: ["A) 9:30 am", "B) 9:15 am", "C) 9:03 pm", "D) 9:09 am"], correct: 3 },
-  { q: "¿Qué actividad humana pone en riesgo la biodiversidad?", options: ["A) Introducción de especies exóticas", "B) Incendios provocados", "C) Ecoturismo", "D) Caza deportiva"], correct: 1 },
-  { q: "¿Qué representa un avance en salud humana?", options: ["A) Sacarosa", "B) Colágeno", "C) Insulina", "D) Almidón"], correct: 2 },
-  { q: "¿Qué proceso transforma energía luminosa en química en autótrofos?", options: ["A) Regulación", "B) Fotosíntesis", "C) Respiración", "D) Oxidacion"], correct: 1 },
-  { q: "¿Cómo se denomina el conjunto de estrategias para satisfacer necesidades actuales y futuras sin comprometer los recursos naturales?", options: ["A) Desarrollo sustentable", "B) Mejoramiento del cultivo intensivo", "C) Desarrollo biotecnológico", "D) Revolución verde"], correct: 0 },
-  { q: "¿Qué acción previene enfermedades respiratorias causadas por contaminación ambiental?", options: ["A) Evitar aglomeraciones", "B) Protegerse cerrando puertas y ventanas", "C) Usar calefacción", "D) No tomar líquidos"], correct: 1 },
-  { q: "¿Qué se debe hacer para proveer al cuerpo de hierro si se padece anemia?", options: ["A) Consumir alimentos con vitamina C", "B) Consumir lípidos", "C) Tener una dieta equilibrada", "D) Tomar 2 litros de agua"], correct: 2 },
-  { q: "¿Qué permite la fijación del carbono en la biósfera y su liberación a la atmósfera?", options: ["A) Fotosíntesis – respiración", "B) Fermentación – fotosíntesis", "C) Respiración – fotosíntesis", "D) Fotosíntesis – quimiosíntesis"], correct: 0 },
-  { q: "¿Qué función tienen las fichas bibliográficas?", options: ["A) Localizar y conservar información", "B) Jerarquizar oraciones", "C) Citar párrafos", "D) Organizar ideas"], correct: 0 },
-  { q: "¿Qué tipo de reproducción disminuye los riesgos de extinción?", options: ["A) Externa", "B) Interna", "C) Sexual", "D) Asexual"], correct: 2 },
-  { q: "¿Qué unidades se ubican en los cromosomas?", options: ["A) Genes", "B) Centrómeros", "C) Nucleótidos", "D) Intrones"], correct: 0 },
-  { q: "¿Cuál ETS es causada por un virus?", options: ["A) Sífilis", "B) Candidiasis", "C) Gonorrea", "D) Papiloma humano"], correct: 3 },
-  { q: "¿Cuál es el tema principal del siguiente cuadro sinóptico?", options: ["A) Categoría semántica", "B) Enunciado bimembre", "C) Categoría gramatical", "D) Enunciado unimembre"], correct: 2 },
-  { q: "¿Cuál párrafo plantea el asunto de un texto expositivo?", options: ["A) I", "B) II", "C) III", "D) IV"], correct: 1 },
-  { q: "¿Qué enunciado encadena argumentos?", options: ["A) Trabaja para pagar sus estudios", "B) Es demasiado inteligente, pero flojo", "C) Es indudable que tiene miedo", "D) Es tan terco que todo le sale mal"], correct: 2 },
-  { q: "¿Qué enunciado expresa una jerarquización?", options: ["A) Es indispensable que termines el ensayo", "B) El italiano como el francés son lenguas romances", "C) La razón más importante por la que estudio es para ganar una beca", "D) No logro agradarte por más que me esfuerce"], correct: 2 },
-  { q: "¿Qué oraciones usan nexos para introducir ideas?", options: ["A) IV", "B) I", "C) II", "D) III"], correct: 1 },
-  { q: "Elige los enunciados que usan nexos de introducción:", options: ["A) I y III", "B) II y IV", "C) II y V", "D) III y V"], correct: 3 },
-  { q: "¿Qué uso de la coma está presente en los enunciados?", options: ["A) En enumeraciones, para separar sustantivos, adjetivos, verbos y frases", "B) Para oración explicativa entre comas", "C) Antes de conjunciones adversativas", "D) En enumeraciones de clases de sentidos"], correct: 0 },
-  { q: "¿Qué función cumplen la coma y el punto y seguido?", options: ["A) Destacar complementos", "B) Separar oraciones", "C) Delimitar vocativos", "D) Citar enumeraciones"], correct: 1 },
-  { q: "¿A qué tipo de texto corresponde el ejemplo del asombro y la sorpresa?", options: ["A) Poético", "B) Literario", "C) Filosófico", "D) Histórico"], correct: 2 },
-  { q: "En el texto “Los secretos del abuelo”, ¿qué contiene la frase subrayada?", options: ["A) Aposición, adjetivo, participio", "B) Adjetivo, aposición, participio", "C) Adjetivo, participio, aposición", "D) Aposición, participio, adjetivo"], correct: 0 },
-  { q: "¿Qué texto publicitario exagera las cualidades del producto?", options: ["A) “Yo sin Bic, no puedo vivir”", "B) “Mejor, mejora, Mejoral”", "C) “Por su rico sabor casero, Tía Rosa”", "D) “Con el cariño de siempre, Bimbo”"], correct: 0 },
-  { q: "¿Cuáles son propiedades físicas de los gases?", options: ["A) Difusibilidad y volumen propio", "B) Volumen definido y maleabilidad", "C) Volumen y forma indefinida", "D) Forma indefinida y maleabilidad"], correct: 2 },
-  { q: "¿Qué ocurre cuando frotas un globo con lana?", options: ["A) Se electriza por fricción", "B) Se magnetiza por inducción", "C) Se polariza por contacto", "D) Se funde el material"], correct: 0 },
-  { q: "¿Qué fenómeno físico permite que un clavo se mantenga en una tabla al ser golpeado?", options: ["A) Gravedad", "B) Fuerza de fricción", "C) Magnetismo", "D) Fuerza centrípeta"], correct: 1 },
-  { q: "¿Qué ocurre cuando aumentas la pendiente de una rampa?", options: ["A) La fuerza de fricción disminuye", "B) La velocidad del objeto aumenta", "C) El peso del objeto disminuye", "D) La masa del objeto cambia"], correct: 1 },
-  { q: "¿Cuál es un ejemplo de transformación de energía cinética en térmica?", options: ["A) Un ventilador", "B) Frotarse las manos", "C) Un foco encendido", "D) Una polea"], correct: 1 },
-  { q: "¿Qué propiedad de la materia está relacionada con la capacidad de flotar o hundirse?", options: ["A) Peso", "B) Masa", "C) Densidad", "D) Volumen"], correct: 2 },
-  { q: "¿Qué instrumento se utiliza para medir la masa?", options: ["A) Termómetro", "B) Regla", "C) Balanza", "D) Dinamómetro"], correct: 2 },
-  { q: "¿Qué ocurre si mezclas arena y limaduras de hierro?", options: ["A) Se forma una disolución", "B) Hay una reacción química", "C) Es una mezcla que se puede separar con un imán", "D) Se forma un compuesto"], correct: 2 },
-  { q: "¿Qué enunciado presenta una propiedad intensiva?", options: ["A) La masa del oro es 250 g", "B) El volumen de agua es 1 L", "C) El cobre pesa 100 g", "D) La densidad del plomo es 11.3 g/cm³"], correct: 3 },
-  { q: "¿Qué ocurre en una reacción exotérmica?", options: ["A) Libera energía", "B) Absorbe energía", "C) Cambia el volumen", "D) Se evapora"], correct: 0 },
-  { q: "¿Qué proceso no altera la naturaleza química de la sustancia?", options: ["A) Oxidación", "B) Disolución", "C) Fermentación", "D) Combustión"], correct: 1 },
-  { q: "¿Qué proceso representa un cambio químico?", options: ["A) Hervir agua", "B) Fundir metal", "C) Quemar papel", "D) Cortar madera"], correct: 2 },
-  { q: "¿Cuál es una propiedad de los metales?", options: ["A) No conducen electricidad", "B) Son dúctiles", "C) Son frágiles", "D) No reflejan la luz"], correct: 1 },
-  { q: "¿Cuál es un ejemplo de mezcla homogénea?", options: ["A) Arena con sal", "B) Agua con sal", "C) Aceite con agua", "D) Arroz con lentejas"], correct: 1 },
-  { q: "¿Qué enunciado es correcto respecto al modelo atómico de Bohr?", options: ["A) Los electrones están fijos", "B) Los electrones giran en órbitas", "C) Los protones se mueven libremente", "D) El núcleo no tiene carga"], correct: 1 },
-  { q: "
+  <div class="question">
+    <p>8. Si Pedro pagó $900 de membresía y cada hora de gimnasio cuesta $30, ¿cuántas horas puede usar con $1500?</p>
+    <label><input type="radio" name="q8" value="A"> A) 20</label><br>
+    <label><input type="radio" name="q8" value="B"> B) 13</label><br>
+    <label><input type="radio" name="q8" value="C"> C) 80</label><br>
+    <label><input type="radio" name="q8" value="D"> D) 50</label>
+  </div>
+
+  <div class="question">
+    <p>9. ¿Cuál es el área de una base cuadrada sin tapa si el lado mide x y altura 6?</p>
+    <label><input type="radio" name="q9" value="A"> A) 6x²</label><br>
+    <label><input type="radio" name="q9" value="B"> B) x² + 24x</label><br>
+    <label><input type="radio" name="q9" value="C"> C) x² + 12x</label><br>
+    <label><input type="radio" name="q9" value="D"> D) 2x² + 24x</label>
+  </div>
+
+  <div class="question">
+    <p>10. ¿Qué condición deben cumplir los lados 9, 7 y 12 para formar un triángulo?</p>
+    <label><input type="radio" name="q10" value="A"> A) a + b > c, a + c > b, b + c > a</label><br>
+    <label><input type="radio" name="q10" value="B"> B) No es triángulo</label><br>
+    <label><input type="radio" name="q10" value="C"> C) a + b < c</label><br>
+    <label><input type="radio" name="q10" value="D"> D) a + c < b</label>
+  </div>
+
+  <div class="question">
+    <p>11. Una familia reparte $102,000 proporcional a las edades 20, 22 y 26. ¿Cuánto aporta el de 26 años?</p>
+    <label><input type="radio" name="q11" value="A"> A) $33,000</label><br>
+    <label><input type="radio" name="q11" value="B"> B) $39,000</label><br>
+    <label><input type="radio" name="q11" value="C"> C) $30,000</label><br>
+    <label><input type="radio" name="q11" value="D"> D) $36,000</label>
+  </div>
+
+  <div class="question">
+    <p>12. ¿Cuánto es el 10% de $900?</p>
+    <label><input type="radio" name="q12" value="A"> A) $100</label><br>
+    <label><input type="radio" name="q12" value="B"> B) $90</label><br>
+    <label><input type="radio" name="q12" value="C"> C) $990</label><br>
+    <label><input type="radio" name="q12" value="D"> D) $810</label>
+  </div>
+
+  <div class="question">
+    <p>13. ¿Qué tipo de cambio ocurre al quemar papel?</p>
+    <label><input type="radio" name="q13" value="A"> A) Físico</label><br>
+    <label><input type="radio" name="q13" value="B"> B) Químico</label><br>
+    <label><input type="radio" name="q13" value="C"> C) Reversible</label><br>
+    <label><input type="radio" name="q13" value="D"> D) Mecánico</label>
+  </div>
+      <div class="question">
+    <p>14. ¿Qué sustancia cambia el tornasol a rojo?</p>
+    <label><input type="radio" name="q14" value="A"> A) Sosa</label><br>
+    <label><input type="radio" name="q14" value="B"> B) Detergente</label><br>
+    <label><input type="radio" name="q14" value="C"> C) Vinagre</label><br>
+    <label><input type="radio" name="q14" value="D"> D) Amoniaco</label>
+  </div>
+
+  <div class="question">
+    <p>15. El sodio (Na) tiene número atómico 11, masa 23. ¿Cuántos neutrones?</p>
+    <label><input type="radio" name="q15" value="A"> A) 11</label><br>
+    <label><input type="radio" name="q15" value="B"> B) 23</label><br>
+    <label><input type="radio" name="q15" value="C"> C) 12</label><br>
+    <label><input type="radio" name="q15" value="D"> D) 10</label>
+  </div>
+
+  <div class="question">
+    <p>16. ¿Qué tipo de enlace forma NaCl?</p>
+    <label><input type="radio" name="q16" value="A"> A) Iónico</label><br>
+    <label><input type="radio" name="q16" value="B"> B) Covalente polar</label><br>
+    <label><input type="radio" name="q16" value="C"> C) Metálico</label><br>
+    <label><input type="radio" name="q16" value="D"> D) Covalente no polar</label>
+  </div>
+
+  <div class="question">
+    <p>17. ¿Qué es una mezcla homogénea?</p>
+    <label><input type="radio" name="q17" value="A"> A) Se ve uniforme</label><br>
+    <label><input type="radio" name="q17" value="B"> B) Se separa fácil</label><br>
+    <label><input type="radio" name="q17" value="C"> C) Tiene varias fases</label><br>
+    <label><input type="radio" name="q17" value="D"> D) Es un compuesto</label>
+  </div>
+
+  <div class="question">
+    <p>18. ¿Qué es una base?</p>
+    <label><input type="radio" name="q18" value="A"> A) Sabe agrio</label><br>
+    <label><input type="radio" name="q18" value="B"> B) Reacciona con metales</label><br>
+    <label><input type="radio" name="q18" value="C"> C) Cambia tornasol a azul</label><br>
+    <label><input type="radio" name="q18" value="D"> D) Tiene pH bajo</label>
+  </div>
+      <div class="question">
+    <p>19. ¿Qué compuesto es H₂O?</p>
+    <label><input type="radio" name="q19" value="A"> A) Compuesto</label><br>
+    <label><input type="radio" name="q19" value="B"> B) Mezcla</label><br>
+    <label><input type="radio" name="q19" value="C"> C) Elemento</label><br>
+    <label><input type="radio" name="q19" value="D"> D) Ácido</label>
+  </div>
+
+  <div class="question">
+    <p>20. ¿Qué propiedad se conserva en una reacción química?</p>
+    <label><input type="radio" name="q20" value="A"> A) Masa</label><br>
+    <label><input type="radio" name="q20" value="B"> B) Temperatura</label><br>
+    <label><input type="radio" name="q20" value="C"> C) Color</label><br>
+    <label><input type="radio" name="q20" value="D"> D) Volumen</label>
+  </div>
+
+  <div class="question">
+    <p>21. ¿Qué es una propiedad extensiva?</p>
+    <label><input type="radio" name="q21" value="A"> A) Masa</label><br>
+    <label><input type="radio" name="q21" value="B"> B) Densidad</label><br>
+    <label><input type="radio" name="q21" value="C"> C) Temperatura</label><br>
+    <label><input type="radio" name="q21" value="D"> D) Solubilidad</label>
+  </div>
+
+  <div class="question">
+    <p>22. ¿Qué es una reacción química?</p>
+    <label><input type="radio" name="q22" value="A"> A) Cambio de estado</label><br>
+    <label><input type="radio" name="q22" value="B"> B) Transformación de sustancias</label><br>
+    <label><input type="radio" name="q22" value="C"> C) Disolución en agua</label><br>
+    <label><input type="radio" name="q22" value="D"> D) Separación física</label>
+  </div>
+
+  <div class="question">
+    <p>23. ¿Qué representa una base en términos de pH?</p>
+    <label><input type="radio" name="q23" value="A"> A) Menor a 7</label><br>
+    <label><input type="radio" name="q23" value="B"> B) Igual a 7</label><br>
+    <label><input type="radio" name="q23" value="C"> C) Mayor a 7</label><br>
+    <label><input type="radio" name="q23" value="D"> D) No tiene pH</label>
+  </div>
+
+  <div class="question">
+    <p>24. ¿Cuál es un ejemplo de cambio químico?</p>
+    <label><input type="radio" name="q24" value="A"> A) El hielo se derrite</label><br>
+    <label><input type="radio" name="q24" value="B"> B) La sal se disuelve</label><br>
+    <label><input type="radio" name="q24" value="C"> C) El hierro se oxida</label><br>
+    <label><input type="radio" name="q24" value="D"> D) El agua se evapora</label>
+  </div>
+      <div class="question">
+    <p>25. ¿Qué suceso marcó la fase final de la Segunda Guerra Mundial?</p>
+    <label><input type="radio" name="q25" value="A"> A) Desembarco de Normandía</label><br>
+    <label><input type="radio" name="q25" value="B"> B) Ataque a Pearl Harbor</label><br>
+    <label><input type="radio" name="q25" value="C"> C) Ataque nuclear a Japón</label><br>
+    <label><input type="radio" name="q25" value="D"> D) Rendición de Alemania</label>
+  </div>
+
+  <div class="question">
+    <p>26. Ideología en Rusia durante la época de entreguerras:</p>
+    <label><input type="radio" name="q26" value="A"> A) Fascismo</label><br>
+    <label><input type="radio" name="q26" value="B"> B) Capitalismo</label><br>
+    <label><input type="radio" name="q26" value="C"> C) Socialismo</label><br>
+    <label><input type="radio" name="q26" value="D"> D) Feudalismo</label>
+  </div>
+
+  <div class="question">
+    <p>27. ¿Qué promovió la Constitución de Cádiz en la independencia de México?</p>
+    <label><input type="radio" name="q27" value="A"> A) Más represión a insurgentes</label><br>
+    <label><input type="radio" name="q27" value="B"> B) Liberación de presos políticos</label><br>
+    <label><input type="radio" name="q27" value="C"> C) Temor de élites a perder privilegios</label><br>
+    <label><input type="radio" name="q27" value="D"> D) Estabilidad económica</label>
+  </div>
+
+  <div class="question">
+    <p>28. ¿Qué país tuvo el Nacional-Socialismo?</p>
+    <label><input type="radio" name="q28" value="A"> A) Italia</label><br>
+    <label><input type="radio" name="q28" value="B"> B) Alemania</label><br>
+    <label><input type="radio" name="q28" value="C"> C) Japón</label><br>
+    <label><input type="radio" name="q28" value="D"> D) Rusia</label>
+  </div>
+
+  <div class="question">
+    <p>29. ¿Qué provocó la Revolución Industrial?</p>
+    <label><input type="radio" name="q29" value="A"> A) Desempleo rural</label><br>
+    <label><input type="radio" name="q29" value="B"> B) Urbanización</label><br>
+    <label><input type="radio" name="q29" value="C"> C) Feudalismo</label><br>
+    <label><input type="radio" name="q29" value="D"> D) Imperialismo</label>
+  </div>
+
+  <div class="question">
+    <p>30. ¿Qué causó la Guerra Cristera en México?</p>
+    <label><input type="radio" name="q30" value="A"> A) Leyes de Plutarco Elías Calles</label><br>
+    <label><input type="radio" name="q30" value="B"> B) Reforma Agraria</label><br>
+    <label><input type="radio" name="q30" value="C"> C) La Constitución de Cádiz</label><br>
+    <label><input type="radio" name="q30" value="D"> D) Expropiación petrolera</label>
+  </div>
+      <div class="question">
+    <p>31. ¿Qué tipo de texto busca convencer al lector?</p>
+    <label><input type="radio" name="q31" value="A"> A) Narrativo</label><br>
+    <label><input type="radio" name="q31" value="B"> B) Publicitario</label><br>
+    <label><input type="radio" name="q31" value="C"> C) Científico</label><br>
+    <label><input type="radio" name="q31" value="D"> D) Poético</label>
+  </div>
+
+  <div class="question">
+    <p>32. ¿Qué tipo de oración tiene sujeto y predicado?</p>
+    <label><input type="radio" name="q32" value="A"> A) Unimembre</label><br>
+    <label><input type="radio" name="q32" value="B"> B) Bimembre</label><br>
+    <label><input type="radio" name="q32" value="C"> C) Exclamativa</label><br>
+    <label><input type="radio" name="q32" value="D"> D) Interrogativa</label>
+  </div>
+
+  <div class="question">
+    <p>33. ¿Cuál es un nexo causal?</p>
+    <label><input type="radio" name="q33" value="A"> A) Aunque</label><br>
+    <label><input type="radio" name="q33" value="B"> B) Porque</label><br>
+    <label><input type="radio" name="q33" value="C"> C) Ni</label><br>
+    <label><input type="radio" name="q33" value="D"> D) O</label>
+  </div>
+
+  <div class="question">
+    <p>34. ¿Qué significa jerarquizar ideas?</p>
+    <label><input type="radio" name="q34" value="A"> A) Ordenarlas por importancia</label><br>
+    <label><input type="radio" name="q34" value="B"> B) Escribirlas al azar</label><br>
+    <label><input type="radio" name="q34" value="C"> C) Destacar una sola idea</label><br>
+    <label><input type="radio" name="q34" value="D"> D) Escribir con sinónimos</label>
+  </div>
+
+  <div class="question">
+    <p>35. “El aire puro, el ejercicio y la buena alimentación…” ¿Qué tipo de uso tiene la coma?</p>
+    <label><input type="radio" name="q35" value="A"> A) Enumeración</label><br>
+    <label><input type="radio" name="q35" value="B"> B) Vocativo</label><br>
+    <label><input type="radio" name="q35" value="C"> C) Exclamación</label><br>
+    <label><input type="radio" name="q35" value="D"> D) Interrogación</label>
+  </div>
+
+  <div class="question">
+    <p>36. ¿Cuál es un sinónimo de “súplica”?</p>
+    <label><input type="radio" name="q36" value="A"> A) Mando</label><br>
+    <label><input type="radio" name="q36" value="B"> B) Orden</label><br>
+    <label><input type="radio" name="q36" value="C"> C) Ruego</label><br>
+    <label><input type="radio" name="q36" value="D"> D) Protesta</label>
+  </div>
+      <div class="question">
+    <p>37. ¿Cuál es el antónimo de “ocio”?</p>
+    <label><input type="radio" name="q37" value="A"> A) Reposo</label><br>
+    <label><input type="radio" name="q37" value="B"> B) Diversión</label><br>
+    <label><input type="radio" name="q37" value="C"> C) Actividad</label><br>
+    <label><input type="radio" name="q37" value="D"> D) Pasatiempo</label>
+  </div>
+
+  <div class="question">
+    <p>38. ¿Qué palabra se usa para exagerar en publicidad?</p>
+    <label><input type="radio" name="q38" value="A"> A) “Yo sin Bic no puedo vivir”</label><br>
+    <label><input type="radio" name="q38" value="B"> B) “El sabor tradicional”</label><br>
+    <label><input type="radio" name="q38" value="C"> C) “Naturalmente delicioso”</label><br>
+    <label><input type="radio" name="q38" value="D"> D) “Perfectamente saludable”</label>
+  </div>
+
+  <div class="question">
+    <p>39. ¿Qué indica la latitud?</p>
+    <label><input type="radio" name="q39" value="A"> A) Altura sobre el nivel del mar</label><br>
+    <label><input type="radio" name="q39" value="B"> B) Posición norte o sur en el globo</label><br>
+    <label><input type="radio" name="q39" value="C"> C) Longitud este-oeste</label><br>
+    <label><input type="radio" name="q39" value="D"> D) Clima predominante</label>
+  </div>
+
+  <div class="question">
+    <p>40. ¿Qué provoca la rotación de la Tierra?</p>
+    <label><input type="radio" name="q40" value="A"> A) Las estaciones</label><br>
+    <label><input type="radio" name="q40" value="B"> B) Día y noche</label><br>
+    <label><input type="radio" name="q40" value="C"> C) El clima</label><br>
+    <label><input type="radio" name="q40" value="D"> D) El año bisiesto</label>
+  </div>
+
+  <div class="question">
+    <p>41. ¿Qué zona de México es petrolera?</p>
+    <label><input type="radio" name="q41" value="A"> A) Península de Yucatán</label><br>
+    <label><input type="radio" name="q41" value="B"> B) Llanura del Golfo</label><br>
+    <label><input type="radio" name="q41" value="C"> C) Altiplano Central</label><br>
+    <label><input type="radio" name="q41" value="D"> D) Sierra Madre Occidental</label>
+  </div>
+
+  <div class="question">
+    <p>42. ¿Qué significa GPS?</p>
+    <label><input type="radio" name="q42" value="A"> A) Sistema de posicionamiento global</label><br>
+    <label><input type="radio" name="q42" value="B"> B) Geolocalización personal satelital</label><br>
+    <label><input type="radio" name="q42" value="C"> C) Grado de presión satelital</label><br>
+    <label><input type="radio" name="q42" value="D"> D) Protocolo de geolocalización</label>
+  </div>
+      <div class="question">
+    <p>43. ¿Qué son las placas tectónicas?</p>
+    <label><input type="radio" name="q43" value="A"> A) Capas de aire</label><br>
+    <label><input type="radio" name="q43" value="B"> B) Fragmentos de la litosfera</label><br>
+    <label><input type="radio" name="q43" value="C"> C) Rocas metamórficas</label><br>
+    <label><input type="radio" name="q43" value="D"> D) Corrientes marinas</label>
+  </div>
+
+  <div class="question">
+    <p>44. ¿Qué forma los volcanes?</p>
+    <label><input type="radio" name="q44" value="A"> A) Actividad sísmica</label><br>
+    <label><input type="radio" name="q44" value="B"> B) Intemperismo</label><br>
+    <label><input type="radio" name="q44" value="C"> C) Actividad endógena</label><br>
+    <label><input type="radio" name="q44" value="D"> D) Presión atmosférica</label>
+  </div>
+
+  <div class="question">
+    <p>45. ¿Qué es un riesgo común en asentamientos irregulares?</p>
+    <label><input type="radio" name="q45" value="A"> A) Exceso de escuelas</label><br>
+    <label><input type="radio" name="q45" value="B"> B) Drenaje eficiente</label><br>
+    <label><input type="radio" name="q45" value="C"> C) Riesgo de derrumbes</label><br>
+    <label><input type="radio" name="q45" value="D"> D) Calles pavimentadas</label>
+  </div>
+
+  <div class="question">
+    <p>46. ¿Qué región económica del mundo tiene menos desigualdades?</p>
+    <label><input type="radio" name="q46" value="A"> A) Unión Europea</label><br>
+    <label><input type="radio" name="q46" value="B"> B) TLCAN</label><br>
+    <label><input type="radio" name="q46" value="C"> C) Mercosur</label><br>
+    <label><input type="radio" name="q46" value="D"> D) T-MEC</label>
+  </div>
+
+  <div class="question">
+    <p>47. ¿En qué continente están el Partenón y la Alhambra?</p>
+    <label><input type="radio" name="q47" value="A"> A) Asia</label><br>
+    <label><input type="radio" name="q47" value="B"> B) Europa</label><br>
+    <label><input type="radio" name="q47" value="C"> C) América</label><br>
+    <label><input type="radio" name="q47" value="D"> D) África</label>
+  </div>
+
+  <div class="question">
+    <p>48. ¿Qué es la multiculturalidad?</p>
+    <label><input type="radio" name="q48" value="A"> A) Indiferencia cultural</label><br>
+    <label><input type="radio" name="q48" value="B"> B) Respeto entre culturas distintas</label><br>
+    <label><input type="radio" name="q48" value="C"> C) Uniformidad cultural</label><br>
+    <label><input type="radio" name="q48" value="D"> D) Superioridad de una cultura</label>
+  </div>
+      <div class="question">
+    <p>49. ¿Qué provoca la sucesión de día y noche?</p>
+    <label><input type="radio" name="q49" value="A"> A) La traslación terrestre</label><br>
+    <label><input type="radio" name="q49" value="B"> B) La rotación terrestre</label><br>
+    <label><input type="radio" name="q49" value="C"> C) La inclinación del eje</label><br>
+    <label><input type="radio" name="q49" value="D"> D) La precesión terrestre</label>
+  </div>
+
+  <div class="question">
+    <p>50. ¿Qué fenómeno permite ver un arcoíris?</p>
+    <label><input type="radio" name="q50" value="A"> A) Refracción de la luz</label><br>
+    <label><input type="radio" name="q50" value="B"> B) Reflexión interna total</label><br>
+    <label><input type="radio" name="q50" value="C"> C) Difracción del sonido</label><br>
+    <label><input type="radio" name="q50" value="D"> D) Absorción del color</label>
+  </div>
+
+  <div class="question">
+    <p>51. ¿Qué valor transmite esta frase? “El trabajo dignifica a las personas.”</p>
+    <label><input type="radio" name="q51" value="A"> A) Económico</label><br>
+    <label><input type="radio" name="q51" value="B"> B) Moral</label><br>
+    <label><input type="radio" name="q51" value="C"> C) Político</label><br>
+    <label><input type="radio" name="q51" value="D"> D) Legal</label>
+  </div>
+
+  <div class="question">
+    <p>52. ¿Qué debe hacer una persona para resolver un conflicto en familia?</p>
+    <label><input type="radio" name="q52" value="A"> A) Ignorar el problema</label><br>
+    <label><input type="radio" name="q52" value="B"> B) Escuchar y proponer una solución en común</label><br>
+    <label><input type="radio" name="q52" value="C"> C) Gritar hasta ganar la discusión</label><br>
+    <label><input type="radio" name="q52" value="D"> D) Evitar a la familia por un tiempo</label>
+  </div>
+  </div><button type="button" onclick="verRespuestas()">Enviar respuestas</button>
+
+</form><div id="result"></div><script>
+  const respuestasCorrectas = {
+    q1: 'A',
+    q2: 'C',
+    q3: 'B',
+    q4: 'B',
+    q5: 'C',
+    q6: 'B'
+  };
+
+  function verRespuestas() {
+    const form = document.getElementById('quizForm');
+    const data = new FormData(form);
+    let output = "<h2>Resultados:</h2><ul>";
+    let aciertos = 0;
+
+    for (let [key, value] of data.entries()) {
+      const correcta = respuestasCorrectas[key];
+      const clase = value === correcta ? 'correct' : 'incorrect';
+      if (value === correcta) aciertos++;
+      output += `<li class="${clase}"><strong>${key.toUpperCase()}</strong>: Respuesta seleccionada: ${value} &rarr; Correcta: ${correcta}</li>`;
+    }
+
+    output += `</ul><p><strong>Total de aciertos: ${aciertos} de ${Object.keys(respuestasCorrectas).length}</strong></p>`;
+    document.getElementById('result').innerHTML = output;
+  }
+</script></body>
+</html>
